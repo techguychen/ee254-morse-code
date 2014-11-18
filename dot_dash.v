@@ -15,7 +15,10 @@ output L, S;
 reg L, S //Long: Dash, Short: Dot
 
 localparam //one-hot
-
+INITIAL = 2'b00,
+WAIT = 2'b01,
+DOT = 2'b10,
+DASH = 2'b11;
 
 
 always @(posedge Clk, posedge Reset) 
@@ -70,5 +73,5 @@ always @(posedge Clk, posedge Reset)
   end
 
 
-endmodule  // letter_sm
+endmodule  // dot_dash
 

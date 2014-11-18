@@ -10,7 +10,8 @@ module wait_timer (Start, Clk, Reset, T, Timeout, Tclear);
 //Timeout is the physical time (i.e. XXX ms as determined by calibration)
 //T timing constraint, user waits too long, goes back to INITIAL
 
-input Start, Clk, Reset, Timeout, Tclear;
+input Start, Clk, Reset, Tclear;
+input [:0] Timeout;
 output T;
 
 reg T; //active high to indicate system timed out
