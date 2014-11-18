@@ -5,17 +5,20 @@
 //
 //  File name:  letter_sm.v
 // ------------------------------------------------------------------------
-module wait_timer (Start, Clk, Reset, T, Timeout);
+module wait_timer (Start, Clk, Reset, T, Timeout, Tclear);
 
+//Timeout is the physical time (i.e. XXX ms as determined by calibration)
 //T timing constraint, user waits too long, goes back to INITIAL
 
-input Start, Clk, Reset;
+input Start, Clk, Reset, Timeout, Tclear;
 output T;
 
-reg T //active high to indicate system timed out
+reg T; //active high to indicate system timed out
+reg state;
 
 localparam //one-hot
-
+INITIAL = 1'b0,
+WAIT = 1'b1;
 
 
 always @(posedge Clk, posedge Reset) 
@@ -31,18 +34,24 @@ always @(posedge Clk, posedge Reset)
          case (state)
             INITIAL : 
               begin
-                  //DPU
-					Tclear <= 1'b1; //don't need to start "waiting" for inputs
-				  // state transitions in the control unit
-					if (L)begin
-						state <= TT;
-						Tclear <= 1'b0; //start considering T
-						end
-					else if (S) begin
-						state <= EE;
-						Tclear <= 1'b0; //start considering T
-						end
+			  //initialize
+			  I = 1'bXXXX;
+			  T = 1'b0;
+			  //state transition
+                  if (Tclear == 1'b0)
+					state <= WAIT;
               end
+			WAIT :
+			begin
+			  //state transitions
+			  if (I == Timeout || Tclear == 1)
+				state <= INITIAL;			  
+			  //DPU
+			  if (I == Timeout)
+				T = 1'b1;
+			  else
+				T = 1'b0;
+			end
 			
       endcase
     end 

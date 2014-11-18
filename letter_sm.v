@@ -12,11 +12,11 @@ module letter_sm (Start, Clk, Reset, L, S, T, letter_code, Tclear);
 input L, S, T; //Long (Dash), Short (Dot), T (user waited too long)
 input Start, Clk, Reset;
 output [25:0] letter_code;
-output Tclear
+output Tclear;
 
 reg [25:0] state;
-reg [25:0] letter_code
-reg Tclear //active high to reset waiting time counter
+reg [25:0] letter_code;
+reg Tclear; //active high to reset waiting time counter
 
 localparam //one-hot
 INITIAL = 26'b00000000000000000000000000,

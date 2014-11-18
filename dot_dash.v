@@ -5,11 +5,11 @@
 //
 //  File name:  letter_sm.v
 // ------------------------------------------------------------------------
-module dot_dash (Start, Clk, Reset, SCEN, MCEN, CCEN, L, S);
+module dot_dash (Start, Clk, Reset, SCEN, MCEN, DPB, L, S);
 
 //T timing constraint, user waits too long, goes back to INITIAL
 
-input Start, Clk, Reset, SCEN, MCEN, CCEN;
+input Start, Clk, Reset, SCEN, MCEN, DPB;
 output L, S;
 
 reg L, S //Long: Dash, Short: Dot
@@ -32,18 +32,39 @@ always @(posedge Clk, posedge Reset)
             INITIAL : 
               begin
                   //DPU
-					Tclear <= 1'b1; //don't need to start "waiting" for inputs
+					L = 1'b0;
+					S = 1'b0; //reset L & S values
+					MC = 1'b0; //reset MCEN count
 				  // state transitions in the control unit
-					if (L)begin
-						state <= TT;
-						Tclear <= 1'b0; //start considering T
-						end
-					else if (S) begin
-						state <= EE;
-						Tclear <= 1'b0; //start considering T
-						end
+					if (SCEN)
+						state <= WAIT;
+						MC <= MC + 1;
               end
-			
+			WAIT :
+			  begin
+				  //state transitions
+					if (~SCEN && ~DPB)
+						state <= DOT;
+					else if (MC == 2 && DPB == 1)
+						state <= DASH;
+				  //DPU... Increment MC as MCEN counts
+					else if (MCEN == 1)
+						MC <= MC + 1;
+			  end
+			DOT :
+			  begin
+				  //DPU
+				  S = 1'b1;
+				  //state transitions
+				  state <= INITIAL;
+			  end
+			DASH :
+			  begin
+				  //DPU
+				  L = 1'b1;
+				  //state transitions
+				  state <= INITIAL;
+			  end
       endcase
     end 
   end
