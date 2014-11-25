@@ -5,20 +5,22 @@
 //
 //  File name:  letter_sm.v
 // ------------------------------------------------------------------------
-module letter_sm (Start, Clk, Reset, L, S, T, letter_code, Tclear);
+module letter_sm (Start, Clk, Reset, L, S, T, Tclear, qA, qB, qC, qD, qE, qF, qG, qH, qI, qJ, qK, qL, qM, qN, qO, qP, qQ, qR, qS, qT, qU, qV, qW, qX, qY, qZ);
 
 //T timing constraint, user waits too long, goes back to INITIAL
 
 input L, S, T; //Long (Dash), Short (Dot), T (user waited too long)
 input Start, Clk, Reset;
-output [25:0] letter_code;
+output qA, qB, qC, qD, qE, qF, qG, qH, qI, qJ, qK, qL, qM, qN, qO, qP, qQ, qR, qS, qT, qU, qV, qW, qX, qY, qZ;
 output Tclear;
+
+assign{qA, qB, qC, qD, qE, qF, qG, qH, qI, qJ, qK, qL, qM, qN, qO, qP, qQ, qR, qS, qT, qU, qV, qW, qX, qY, qZ} = letter_code;
 
 reg [25:0] state;
 reg [25:0] letter_code;
 reg Tclear; //active high to reset waiting time counter
-
-localparam //one-hot
+// state, one-hot
+localparam
 INITIAL = 26'b00000000000000000000000000,
 AA = 26'b10000000000000000000000000,
 BB = 26'b01000000000000000000000000,
@@ -53,17 +55,17 @@ always @(posedge Clk, posedge Reset)
   begin  : CU_n_DU
     if (Reset)
        begin
-            state       <= INITIAL;
-            letter_code <= 26'b00000000000000000000000000;
+            state <= INITIAL;
+			letter_code <= INITIAL;
        end
     else if (Start)
        begin
-         (* full_case, parallel_case *)
+         //(* full_case, parallel_case *)
          case (state)
             INITIAL : 
               begin
                   //DPU
-					Tclear <= 1'b1; //don't need to start "waiting" for inputs
+					Tclear = 1'b1; //don't need to start "waiting" for inputs
 				  // state transitions in the control unit
 					if (L)begin
 						state <= TT;
@@ -92,13 +94,13 @@ always @(posedge Clk, posedge Reset)
 				else
 					begin
 					state <= INITIAL;
+				end
 				//DPU
 				if (T) begin
 				letter_code <= state;
 				Tclear <= 1'b1; //Past waiting time. Go back to INITIAL and reset waiting counter
 				end
 			  end
-			end
 			BB : 
               begin
                 //end of code (nothing comes after BAD
@@ -132,14 +134,13 @@ always @(posedge Clk, posedge Reset)
 				end
 				else
 					begin
-					state <= INITIAL;
+					state <= INITIAL; end
 				//DPU
 				if (T) begin
 				letter_code <= state;
 				Tclear <= 1'b1; //Past waiting time. Go back to INITIAL and reset waiting counter
 				end
 			  end
-			end
 			  EE : 
               begin
                 if (~T)
@@ -157,14 +158,13 @@ always @(posedge Clk, posedge Reset)
 				end
 				else
 					begin
-					state <= INITIAL;
+					state <= INITIAL; end
 				//DPU
 				if (T) begin
 				letter_code <= state;
 				Tclear <= 1'b1; //Past waiting time. Go back to INITIAL and reset waiting counter
 				end
 			  end
-			end
 			  FF : 
               begin
                 //end of code (nothing comes after BAD
@@ -190,14 +190,13 @@ always @(posedge Clk, posedge Reset)
 				end
 				else
 					begin
-					state <= INITIAL;
+					state <= INITIAL; end
 				//DPU
 				if (T) begin
 				letter_code <= state;
 				Tclear <= 1'b1; //Past waiting time. Go back to INITIAL and reset waiting counter
 				end
 			  end
-			end
 			  HH : 
              begin
                 //end of code (nothing comes after)
@@ -223,14 +222,13 @@ always @(posedge Clk, posedge Reset)
 				end
 				else
 					begin
-					state <= INITIAL;
+					state <= INITIAL; end
 				//DPU
 				if (T) begin
 				letter_code <= state;
 				Tclear <= 1'b1; //Past waiting time. Go back to INITIAL and reset waiting counter
 				end
 			  end
-			end
 			  JJ : 
              begin
                 //end of code (nothing comes after)
@@ -256,14 +254,13 @@ always @(posedge Clk, posedge Reset)
 				end
 				else
 					begin
-					state <= INITIAL;
+					state <= INITIAL; end
 				//DPU
 				if (T) begin
 				letter_code <= state;
 				Tclear <= 1'b1; //Past waiting time. Go back to INITIAL and reset waiting counter
 				end
 			  end
-			end
 			  LL : 
               begin
                 //end of code (nothing comes after)
@@ -289,14 +286,13 @@ always @(posedge Clk, posedge Reset)
 				end
 				else
 					begin
-					state <= INITIAL;
+					state <= INITIAL; end
 				//DPU
 				if (T) begin
 				letter_code <= state;
 				Tclear <= 1'b1; //Past waiting time. Go back to INITIAL and reset waiting counter
 				end
 			  end
-			end
 			  NN : 
               begin
                 if (~T)
@@ -314,14 +310,13 @@ always @(posedge Clk, posedge Reset)
 				end
 				else
 					begin
-					state <= INITIAL;
+					state <= INITIAL; end
 				//DPU
 				if (T) begin
 				letter_code <= state;
 				Tclear <= 1'b1; //Past waiting time. Go back to INITIAL and reset waiting counter
 				end
 			  end
-			end
 			  OO : 
               begin
                 //end of code (nothing comes after)
@@ -359,14 +354,13 @@ always @(posedge Clk, posedge Reset)
 				end
 				else
 					begin
-					state <= INITIAL;
+					state <= INITIAL; end
 				//DPU
 				if (T) begin
 				letter_code <= state;
 				Tclear <= 1'b1; //Past waiting time. Go back to INITIAL and reset waiting counter
 				end
 			  end
-			end
 			  SS : 
               begin
                 if (~T)
@@ -384,14 +378,13 @@ always @(posedge Clk, posedge Reset)
 				end
 				else
 					begin
-					state <= INITIAL;
+					state <= INITIAL; end
 				//DPU
 				if (T) begin
 				letter_code <= state;
 				Tclear <= 1'b1; //Past waiting time. Go back to INITIAL and reset waiting counter
 				end
 			  end
-			end
 			  TT : 
               begin
                 if (~T)
@@ -409,14 +402,13 @@ always @(posedge Clk, posedge Reset)
 				end
 				else
 					begin
-					state <= INITIAL;
+					state <= INITIAL; end
 				//DPU
 				if (T) begin
 				letter_code <= state;
 				Tclear <= 1'b1; //Past waiting time. Go back to INITIAL and reset waiting counter
 				end
 			  end
-			end
 			  UU : 
               begin
                 if (~T)
@@ -430,14 +422,13 @@ always @(posedge Clk, posedge Reset)
 				end
 				else
 					begin
-					state <= INITIAL;
+					state <= INITIAL; end
 				//DPU
 				if (T) begin
 				letter_code <= state;
 				Tclear <= 1'b1; //Past waiting time. Go back to INITIAL and reset waiting counter
 				end
 			  end
-			end
 			  VV : 
               begin
                 //end of code (nothing comes after)
@@ -463,14 +454,13 @@ always @(posedge Clk, posedge Reset)
 				end
 				else
 					begin
-					state <= INITIAL;
+					state <= INITIAL; end
 				//DPU
 				if (T) begin
 				letter_code <= state;
 				Tclear <= 1'b1; //Past waiting time. Go back to INITIAL and reset waiting counter
 				end
 				end
-			end
 			  XX : 
               begin
                 //end of code (nothing comes after BAD

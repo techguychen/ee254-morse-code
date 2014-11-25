@@ -12,13 +12,12 @@ module dot_dash (Start, Clk, Reset, SCEN, MCEN, DPB, L, S);
 input Start, Clk, Reset, SCEN, MCEN, DPB;
 output L, S;
 
-reg L, S //Long: Dash, Short: Dot
+reg L, S; //Long: Dash, Short: Dot
+reg state;
 
-localparam //one-hot
-INITIAL = 2'b00,
-WAIT = 2'b01,
-DOT = 2'b10,
-DASH = 2'b11;
+localparam //coded
+INITIAL = 0,
+WAIT = 1;
 
 
 always @(posedge Clk, posedge Reset) 
@@ -26,47 +25,33 @@ always @(posedge Clk, posedge Reset)
   begin  : CU_n_DU
     if (Reset)
        begin
-            state       <= INITIAL;
+            state <= INITIAL;
        end
     else if (Start)
        begin
-         (* full_case, parallel_case *)
+         //(* full_case, parallel_case *)
          case (state)
             INITIAL : 
               begin
                   //DPU
 					L = 1'b0;
 					S = 1'b0; //reset L & S values
-					MC = 1'b0; //reset MCEN count
-				  // state transitions in the control unit
-					if (SCEN)
+					if (SCEN) begin
 						state <= WAIT;
-						MC <= MC + 1;
+					end
               end
 			WAIT :
 			  begin
 				  //state transitions
-					if (~SCEN && ~DPB)
-						state <= DOT;
-					else if (MC == 2 && DPB == 1)
-						state <= DASH;
+					if (~SCEN && ~DPB) begin
+						state <= INITIAL;
+						S = 1'b1;
+					end
 				  //DPU... Increment MC as MCEN counts
-					else if (MCEN == 1)
-						MC <= MC + 1;
-			  end
-			DOT :
-			  begin
-				  //DPU
-				  S = 1'b1;
-				  //state transitions
-				  state <= INITIAL;
-			  end
-			DASH :
-			  begin
-				  //DPU
-				  L = 1'b1;
-				  //state transitions
-				  state <= INITIAL;
+					else if (MCEN) begin
+						state <= INITIAL;
+						L = 1'b1;
+					end
 			  end
       endcase
     end 

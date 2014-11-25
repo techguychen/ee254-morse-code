@@ -5,21 +5,22 @@
 //
 //  File name:  letter_sm.v
 // ------------------------------------------------------------------------
-module wait_timer (Start, Clk, Reset, T, Timeout, Tclear);
+module wait_timer (Start, Clk, Reset, T, Timeout, Tclear, I);
 
 //Timeout is the physical time (i.e. XXX ms as determined by calibration)
 //T timing constraint, user waits too long, goes back to INITIAL
 
 input Start, Clk, Reset, Tclear;
-input [:0] Timeout;
+input [30:0] Timeout; //if we use a Counter, this corresponds to 100MHz/2^30 => 10s
 output T;
+output reg [30:0] I;
 
 reg T; //active high to indicate system timed out
 reg state;
 
 localparam //one-hot
-INITIAL = 1'b0,
-WAIT = 1'b1;
+INITIAL = 0,
+WAIT = 1;
 
 
 always @(posedge Clk, posedge Reset) 
@@ -27,21 +28,21 @@ always @(posedge Clk, posedge Reset)
   begin  : CU_n_DU
     if (Reset)
        begin
-            state       <= INITIAL;
+            state <= INITIAL;
        end
     else if (Start)
        begin
-         (* full_case, parallel_case *)
+         //(* full_case, parallel_case *)
          case (state)
             INITIAL : 
               begin
 			  //initialize
-			  I = 1'bXXXX;
+			  I = 0;
 			  T = 1'b0;
 			  //state transition
-                  if (Tclear == 1'b0)
+					if (Tclear == 0)
 					state <= WAIT;
-              end
+					end
 			WAIT :
 			begin
 			  //state transitions
@@ -50,8 +51,10 @@ always @(posedge Clk, posedge Reset)
 			  //DPU
 			  if (I == Timeout)
 				T = 1'b1;
-			  else
+			  else begin
 				T = 1'b0;
+				I <= I + 1;
+				end
 			end
 			
       endcase

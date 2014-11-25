@@ -5,15 +5,19 @@
 //
 //  File name:  letter_sm.v
 // ------------------------------------------------------------------------
-module calibration (Start, Clk, Reset, L, S, Timeout);
+module calibration (Start, Clk, Reset, L, S, Timeout, T_count1, T_count2, T_count3, state, dot_cnt, dash_cnt);
 
 //T timing constraint, user waits too long, goes back to INITIAL
 
 input Start, Clk, Reset, L, S;
-output Timeout;
+output reg [30:0] Timeout;
+output reg [30:0] T_count1;
+output reg [30:0] T_count2;
+output reg [30:0] T_count3;
 
-reg Timeout;
-reg T_count[2:0];
+output reg [2:0] state;
+output reg [2:0] dot_cnt;
+output reg [2:0] dash_cnt;
 
 localparam //one-hot
 INITIAL = 3'b000,
@@ -28,18 +32,20 @@ always @(posedge Clk, posedge Reset)
   begin  : CU_n_DU
     if (Reset)
        begin
-            state       <= INITIAL;
+            state <= INITIAL;
        end
     else if (Start)
        begin
-         (* full_case, parallel_case *)
+         //(* full_case, parallel_case *)
          case (state)
             INITIAL : 
               begin
                   //DPU
 					dot_cnt = 0;
 					dash_cnt = 0; //reset Dot/Dash counters to 0
-					T_count[2:0] = 0;
+					T_count1 = 0;
+					T_count2 = 0;
+					T_count3 = 0;
 					Timeout = 0;
 				  // state transitions in the control unit
 					if (S) begin
@@ -55,12 +61,13 @@ always @(posedge Clk, posedge Reset)
 					dash_cnt <= 1;
 				end
 				else begin
-					if (dot_cnt != 4)
+					if (dot_cnt != 4) begin
 						if (S) begin
 						dot_cnt <= dot_cnt + 1;
 						end
+					end
 					else
-						T_count[0] <= T_count[0] + 1;
+						T_count1 <= T_count1 + 1;
 				end
 				
 			  end
@@ -72,12 +79,13 @@ always @(posedge Clk, posedge Reset)
 					dot_cnt <= 1;
 			  end
 				else begin
-					if (dash_cnt != 4)
-						if (S) begin
+					if (dash_cnt != 4)begin
+						if (L) begin
 						dash_cnt <= dash_cnt + 1;
 						end
+					end
 					else
-						T_count[1] <= T_count[1] + 1;
+						T_count2 <= T_count2 + 1;
 				end
 			  end
 			DOT2 :
@@ -88,12 +96,12 @@ always @(posedge Clk, posedge Reset)
 					dash_cnt <= 1;
 			  end
 				else begin
-					if (dot_cnt != 4)
-						if (S) begin
+					if (dot_cnt != 4) begin
+						if (S)
 						dot_cnt <= dot_cnt + 1;
-						end
+					end
 					else
-						T_count[2] <= T_count + 1;
+						T_count3 <= T_count3 + 1;
 				end
 			  end
 			DASH2 :
@@ -107,7 +115,7 @@ always @(posedge Clk, posedge Reset)
 			  end
 			CALC :
 			begin
-					Timeout = (T_count[0] + T_count[1] + T_count[2])/3;
+					Timeout = (T_count1 + T_count2 + T_count3)/3;
 			end
       endcase
     end 
