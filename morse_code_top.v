@@ -53,17 +53,19 @@ module morse_code_top (
 	wire		board_clk, sys_clk;
 	wire [1:0] 	ssdscan_clk;
 	
-	wire [3:0] 	Xin, Yin;
-	wire [3:0] 	Quotient, Remainder;
-	// wire 		Start, Ack; // in the divider_simple
-	wire  		Start_Ack_SCEN; // from the debouncer
-	wire 		Done, Qi, Qc, Qd;
+	wire  		SCEN_DD, MCEN_DD, DPB_DD; // from the debouncer
+	wire [30:0] Timeout_cal; //from Calibration
+	wire 		DOT, DASH; //from dot_dash
+	wire 		Tclear_letter; //from letter_sm
+	wire 		qA, qB, qC, qD, qE, qF, qG, qH, qI, qJ, qK, qL, qM, qN, qO, qP, qQ, qR, qS, qT, qU, qV, qW, qX, qY, qZ; //from letter_sm
+	wire [25:0] letter_code; //from letter_sm
+	wire 		T_en; //from wait_timer
 
 // to produce divided clock
 	reg [26:0]	DIV_CLK;
 // SSD (Seven Segment Display)
-	reg [3:0]	SSD;
-	wire [3:0]	SSD3, SSD2, SSD1, SSD0;
+	reg [25:0]	SSD;
+	wire [25:0]	SSD3, SSD2, SSD1, SSD0;
 	reg [7:0]  	SSD_CATHODES;
 	
 	
@@ -118,14 +120,14 @@ module morse_code_top (
 	// Instantiate the debouncer	// module ee201_debouncer(CLK, RESET, PB, DPB, SCEN, MCEN, CCEN);
 	// notice the "Start_Ack_SCEN" produced here and sent into the divider core further below
 ee201_debouncer #(.N_dc(25)) ee201_debouncer_1 
-        (.CLK(sys_clk), .RESET(Reset), .PB(BtnL), .DPB(DPB), .SCEN(SCEN), .MCEN(MCEN), .CCEN( ));
+        (.CLK(sys_clk), .RESET(Reset), .PB(BtnL), .DPB(DPB_DD), .SCEN(SCEN_DD), .MCEN(MCEN_DD), .CCEN( ));
 						
 	// instantiate the calibration design
-	calibration calibration_1(.Start(cal_Start), .Clk(sys_clk), .Reset(Reset), .L(L), .S(L), .Timeout(Timeout), .T_count1(), .T_count2(), .T_count3(), .state(), .dot_cnt(), .dash_cnt());
+	calibration calibration_1(.Start(cal_Start), .Clk(sys_clk), .Reset(Reset), .L(DASH), .S(DOT), .Timeout(Timeout_cal), .T_count1(), .T_count2(), .T_count3(), .state(), .dot_cnt(), .dash_cnt());
 	// instantiate the dot_dash design
-	dot_dash dot_dash_1(.Start(dot_dash_Start), .Clk(sys_clk), .Reset(Reset), .SCEN(SCEN), .MCEN(MCEN), .DPB(DPB), .L(L), .S(S));
-	wait_timer wait_timer_1(.Start(Start), .Clk(sys_clk), .Reset(Reset), .T(T), .Timeout(Timeout), .Tclear(Tclear), .I());
-	letter_sm letter_sm_1(.Start(Start), .Clk(sys_clk), .Reset(Reset), .L(L), .S(S), .T(T), .Tclear(Tclear), .qA(), .qB, .qC, .qD, .qE, .qF, .qG, .qH, .qI, .qJ, .qK, .qL, .qM, .qN, .qO, .qP, .qQ, .qR, .qS, .qT, .qU, .qV, .qW, .qX, .qY, .qZ);
+	dot_dash dot_dash_1(.Start(dot_dash_Start), .Clk(sys_clk), .Reset(Reset), .SCEN(SCEN_DD), .MCEN(MCEN_DD), .DPB(DPB_DD), .L(DASH), .S(DOT));
+	wait_timer wait_timer_1(.Start(Start), .Clk(sys_clk), .Reset(Reset), .T(T_en), .Timeout(Timeout_cal), .Tclear(Tclear_letter), .I());
+	letter_sm letter_sm_1(.Start(Start), .Clk(sys_clk), .Reset(Reset), .L(DASH), .S(DOT), .T(T_en), .Tclear(Tclear_letter), .qA(qA), .qB(qB), .qC(qC), .qD(qD), .qE(qE), .qF(qF), .qG(qG), .qH(qH), .qI(qI), .qJ(qJ), .qK(qK), .qL(qL), .qM(qM), .qN(qN), .qO(qO), .qP(qP), .qQ(qQ), .qR(qR), .qS(qS), .qT(qT), .qU(qU), .qV(qV), .qW(qW), .qX(qX), .qY(qY), .qZ(qZ), .letter_code(letter_code));
 //------------
 // OUTPUT: LEDS
 
@@ -136,10 +138,7 @@ ee201_debouncer #(.N_dc(25)) ee201_debouncer_1
 	// wire [3:0]	SSD3, SSD2, SSD1, SSD0;
 	
 	//SSDs display Xin, Yin, Quotient, and Reminder  
-	assign SSD3 = Xin;
-	assign SSD2 = Yin;
-	assign SSD1 = Quotient;
-	assign SSD0 = Remainder;
+	assign SSD0 = letter_code;
 
 	// need a scan clk for the seven segment display 
 	
@@ -184,25 +183,34 @@ ee201_debouncer #(.N_dc(25)) ee201_debouncer_1
 	// Following is Hex-to-SSD conversion
 	always @ (SSD) 
 	begin : HEX_TO_SSD
-		case (SSD) // in this solution file the dot points are made to glow by making Dp = 0
-		    //                                                                abcdefg,Dp
-			4'b0000: SSD_CATHODES = 8'b00000010; // 0
-			4'b0001: SSD_CATHODES = 8'b10011110; // 1
-			4'b0010: SSD_CATHODES = 8'b00100100; // 2
-			4'b0011: SSD_CATHODES = 8'b00001100; // 3
-			4'b0100: SSD_CATHODES = 8'b10011000; // 4
-			4'b0101: SSD_CATHODES = 8'b01001000; // 5
-			4'b0110: SSD_CATHODES = 8'b01000000; // 6
-			4'b0111: SSD_CATHODES = 8'b00011110; // 7
-			4'b1000: SSD_CATHODES = 8'b00000000; // 8
-			4'b1001: SSD_CATHODES = 8'b00001000; // 9
-			4'b1010: SSD_CATHODES = 8'b00010000; // A
-			4'b1011: SSD_CATHODES = 8'b11000000; // B
-			4'b1100: SSD_CATHODES = 8'b01100010; // C
-			4'b1101: SSD_CATHODES = 8'b10000100; // D
-			4'b1110: SSD_CATHODES = 8'b01100000; // E
-			4'b1111: SSD_CATHODES = 8'b01110000; // F    
-			default: SSD_CATHODES = 8'bXXXXXXXX; // default is not needed as we covered all cases
+		case (SSD) 
+			26'b10000000000000000000000000: SSD_CATHODES = 8'b00010000; // A
+			26'b01000000000000000000000000: SSD_CATHODES = 8'b11000000; // B
+			26'b00100000000000000000000000: SSD_CATHODES = 8'b01100010; // C
+			26'b00010000000000000000000000: SSD_CATHODES = 8'b10000100; // D
+			26'b00001000000000000000000000: SSD_CATHODES = 8'b01100000; // E
+			26'b00000100000000000000000000: SSD_CATHODES = 8'b01110000; // F
+			26'b00000010000000000000000000: SSD_CATHODES = 8'b01000000; // G
+			26'b00000001000000000000000000: SSD_CATHODES = 8'b10010000; // H
+			26'b00000000100000000000000000: SSD_CATHODES = 8'b10011110; // I
+			26'b00000000010000000000000000: SSD_CATHODES = 8'b10000110; // J
+			26'b00000000001000000000000000: SSD_CATHODES = 8'b10100000; // K
+			26'b00000000000100000000000000: SSD_CATHODES = 8'b11100010; // L
+			26'b00000000000010000000000000: SSD_CATHODES = 8'b01010110; // M
+			26'b00000000000001000000000000: SSD_CATHODES = 8'b11010100; // N
+			26'b00000000000000100000000000: SSD_CATHODES = 8'b00000010; // O
+			26'b00000000000000010000000000: SSD_CATHODES = 8'b00110000; // P
+			26'b00000000000000001000000000: SSD_CATHODES = 8'b00011000; // Q
+			26'b00000000000000000100000000: SSD_CATHODES = 8'b00100000; // R   
+			26'b00000000000000000010000000: SSD_CATHODES = 8'b01001000; // S
+			26'b00000000000000000001000000: SSD_CATHODES = 8'b11110000; // T
+			26'b00000000000000000000100000: SSD_CATHODES = 8'b10000001; // U
+			26'b00000000000000000000010000: SSD_CATHODES = 8'b11000011; // V
+			26'b00000000000000000000001000: SSD_CATHODES = 8'b10000000; // W
+			26'b00000000000000000000000100: SSD_CATHODES = 8'b10010010; // X
+			26'b00000000000000000000000010: SSD_CATHODES = 8'b10101000; // Y
+			26'b00000000000000000000000001: SSD_CATHODES = 8'b00100100; // Z			
+			default: SSD_CATHODES = 26'bXXXXXXXXXXXXXXXXXXXXXXXXXX; // default is not needed as we covered all cases
 		endcase
 	end	
 	

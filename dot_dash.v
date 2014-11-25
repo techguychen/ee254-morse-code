@@ -3,7 +3,7 @@
 //
 //  Written by Gandhi Puvvada  Date: 7/17/98, 2/15/2008
 //
-//  File name:  letter_sm.v
+//  File name:  dot_dash.v
 // ------------------------------------------------------------------------
 module dot_dash (Start, Clk, Reset, SCEN, MCEN, DPB, L, S);
 

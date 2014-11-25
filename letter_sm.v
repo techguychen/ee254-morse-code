@@ -5,7 +5,7 @@
 //
 //  File name:  letter_sm.v
 // ------------------------------------------------------------------------
-module letter_sm (Start, Clk, Reset, L, S, T, Tclear, qA, qB, qC, qD, qE, qF, qG, qH, qI, qJ, qK, qL, qM, qN, qO, qP, qQ, qR, qS, qT, qU, qV, qW, qX, qY, qZ);
+module letter_sm (Start, Clk, Reset, L, S, T, Tclear, qA, qB, qC, qD, qE, qF, qG, qH, qI, qJ, qK, qL, qM, qN, qO, qP, qQ, qR, qS, qT, qU, qV, qW, qX, qY, qZ, letter_code);
 
 //T timing constraint, user waits too long, goes back to INITIAL
 
@@ -17,7 +17,7 @@ output Tclear;
 assign{qA, qB, qC, qD, qE, qF, qG, qH, qI, qJ, qK, qL, qM, qN, qO, qP, qQ, qR, qS, qT, qU, qV, qW, qX, qY, qZ} = letter_code;
 
 reg [25:0] state;
-reg [25:0] letter_code;
+output reg [25:0] letter_code;
 reg Tclear; //active high to reset waiting time counter
 // state, one-hot
 localparam

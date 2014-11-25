@@ -33,6 +33,14 @@ always @(posedge Clk, posedge Reset)
     if (Reset)
        begin
             state <= INITIAL;
+				   //DPU
+					dot_cnt <= 0;
+					dash_cnt <= 0; //reset Dot/Dash counters to 0
+					T_count1 <= 0;
+					T_count2 <= 0;
+					T_count3 <= 0;
+					Timeout <= 0;
+
        end
     else if (Start)
        begin
@@ -40,13 +48,6 @@ always @(posedge Clk, posedge Reset)
          case (state)
             INITIAL : 
               begin
-                  //DPU
-					dot_cnt = 0;
-					dash_cnt = 0; //reset Dot/Dash counters to 0
-					T_count1 = 0;
-					T_count2 = 0;
-					T_count3 = 0;
-					Timeout = 0;
 				  // state transitions in the control unit
 					if (S) begin
 						state <= DOT1;
@@ -115,7 +116,7 @@ always @(posedge Clk, posedge Reset)
 			  end
 			CALC :
 			begin
-					Timeout = (T_count1 + T_count2 + T_count3)/3;
+					Timeout <= (T_count1 + T_count2 + T_count3)/3;
 			end
       endcase
     end 
