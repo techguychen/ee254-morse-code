@@ -12,13 +12,12 @@ module letter_sm (Start, Clk, Reset, L, S, T, Tclear, qA, qB, qC, qD, qE, qF, qG
 input L, S, T; //Long (Dash), Short (Dot), T (user waited too long)
 input Start, Clk, Reset;
 output qA, qB, qC, qD, qE, qF, qG, qH, qI, qJ, qK, qL, qM, qN, qO, qP, qQ, qR, qS, qT, qU, qV, qW, qX, qY, qZ;
-output Tclear;
+output reg Tclear; //active high to reset waiting time counter
 
 assign{qA, qB, qC, qD, qE, qF, qG, qH, qI, qJ, qK, qL, qM, qN, qO, qP, qQ, qR, qS, qT, qU, qV, qW, qX, qY, qZ} = letter_code;
 
 reg [25:0] state;
 output reg [25:0] letter_code;
-reg Tclear; //active high to reset waiting time counter
 // state, one-hot
 localparam
 INITIAL = 26'b00000000000000000000000000,
@@ -65,7 +64,7 @@ always @(posedge Clk, posedge Reset)
             INITIAL : 
               begin
                   //DPU
-					Tclear = 1'b1; //don't need to start "waiting" for inputs
+					Tclear <= 1'b1; //don't need to start "waiting" for inputs
 				  // state transitions in the control unit
 					if (L)begin
 						state <= TT;

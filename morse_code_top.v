@@ -139,6 +139,9 @@ ee201_debouncer #(.N_dc(25)) ee201_debouncer_1
 	
 	//SSDs display Xin, Yin, Quotient, and Reminder  
 	assign SSD0 = letter_code;
+	assign SSD1 = 26'b00000000000000000000000000;
+	assign SSD2 = 26'b00000000000000000000000000;
+	assign SSD3 = 26'b00000000000000000000000000;
 
 	// need a scan clk for the seven segment display 
 	
@@ -184,6 +187,7 @@ ee201_debouncer #(.N_dc(25)) ee201_debouncer_1
 	always @ (SSD) 
 	begin : HEX_TO_SSD
 		case (SSD) 
+			26'b00000000000000000000000000: SSD_CATHODES = 8'b11111111; // nothing
 			26'b10000000000000000000000000: SSD_CATHODES = 8'b00010000; // A
 			26'b01000000000000000000000000: SSD_CATHODES = 8'b11000000; // B
 			26'b00100000000000000000000000: SSD_CATHODES = 8'b01100010; // C
@@ -210,7 +214,7 @@ ee201_debouncer #(.N_dc(25)) ee201_debouncer_1
 			26'b00000000000000000000000100: SSD_CATHODES = 8'b10010010; // X
 			26'b00000000000000000000000010: SSD_CATHODES = 8'b10101000; // Y
 			26'b00000000000000000000000001: SSD_CATHODES = 8'b00100100; // Z			
-			default: SSD_CATHODES = 26'bXXXXXXXXXXXXXXXXXXXXXXXXXX; // default is not needed as we covered all cases
+			default: SSD_CATHODES = 8'bXXXXXXXX; // default is not needed as we covered all cases
 		endcase
 	end	
 	

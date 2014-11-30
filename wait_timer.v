@@ -37,8 +37,8 @@ always @(posedge Clk, posedge Reset)
             INITIAL : 
               begin
 			  //initialize
-			  I = 0;
-			  T = 1'b0;
+			  I <= 0;
+			  T <= 1'b0;
 			  //state transition
 					if (Tclear == 0)
 					state <= WAIT;
@@ -50,9 +50,9 @@ always @(posedge Clk, posedge Reset)
 				state <= INITIAL;			  
 			  //DPU
 			  if (I == Timeout)
-				T = 1'b1;
+				T <= 1'b1;
 			  else begin
-				T = 1'b0;
+				T <= 1'b0;
 				I <= I + 1;
 				end
 			end
