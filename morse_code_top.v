@@ -25,7 +25,9 @@ module morse_code_top (
 		Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0, // 8 LEDs
 		An3, An2, An1, An0,			       // 4 anodes
 		Ca, Cb, Cc, Cd, Ce, Cf, Cg,        // 7 cathodes
-		Dp                                 // Dot Point Cathode on SSDs
+		Dp,                                // Dot Point Cathode on SSDs
+		St_ce_bar, St_rp_bar, Mt_ce_bar, Mt_St_oe_bar, Mt_St_we_bar, //vga
+		vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b //vga
 	  );
 	  
 	/*  INPUTS */
@@ -44,6 +46,12 @@ module morse_code_top (
 	// SSD Outputs
 	output 	Cg, Cf, Ce, Cd, Cc, Cb, Ca, Dp;
 	output 	An0, An1, An2, An3;	
+	
+	//VGA
+	output St_ce_bar, St_rp_bar, Mt_ce_bar, Mt_St_oe_bar, Mt_St_we_bar;
+	output vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b;
+	//reg vga_r, vga_g, vga_b;
+	
 
 	
 	/*  LOCAL SIGNALS */
@@ -90,9 +98,11 @@ module morse_code_top (
 
 	// BUFGP BUFGP2 (Reset, BtnC); In the case of Spartan 3E (on Nexys-2 board), we were using BUFGP to provide global routing for the reset signal. But Spartan 6 (on Nexys-3) does not allow this.
 	assign Reset = BtnC;
-	assign cal_Start = ~Sw1;
-	assign Start = ~Sw0;
-	assign dot_dash_Start = 1'b0;
+	assign cal_Start = Sw1;
+	assign Start = Sw0;
+	assign dot_dash_Start = 1'b1;
+	//fake Timeout
+	//assign Timeout_cal = 32'b00010000000000000000000000000000;
 	
 //------------
 	// Our clock is too fast (100MHz) for SSD scanning
@@ -123,8 +133,13 @@ ee201_debouncer #(.N_dc(25)) ee201_debouncer_1
 	calibration calibration_1(.Start(cal_Start), .Clk(sys_clk), .Reset(Reset), .L(DASH), .S(DOT), .Timeout(Timeout_cal), .T_count1(), .T_count2(), .T_count3(), .state(), .dot_cnt(), .dash_cnt());
 	// instantiate the dot_dash design
 	dot_dash dot_dash_1(.Start(dot_dash_Start), .Clk(sys_clk), .Reset(Reset), .SCEN(SCEN_DD), .MCEN(MCEN_DD), .DPB(DPB_DD), .L(DASH), .S(DOT));
+	//wait_timer
 	wait_timer wait_timer_1(.Start(Start), .Clk(sys_clk), .Reset(Reset), .T(T_en), .Timeout(Timeout_cal), .Tclear(Tclear_letter), .I());
+	//letter_code
 	letter_sm letter_sm_1(.Start(Start), .Clk(sys_clk), .Reset(Reset), .L(DASH), .S(DOT), .T(T_en), .Tclear(Tclear_letter), .qA(qA), .qB(qB), .qC(qC), .qD(qD), .qE(qE), .qF(qF), .qG(qG), .qH(qH), .qI(qI), .qJ(qJ), .qK(qK), .qL(qL), .qM(qM), .qN(qN), .qO(qO), .qP(qP), .qQ(qQ), .qR(qR), .qS(qS), .qT(qT), .qU(qU), .qV(qV), .qW(qW), .qX(qX), .qY(qY), .qZ(qZ), .letter_code(letter_code));
+	//VGA
+	vga_demo VGA_1(.ClkPort(sys_clk), .vga_h_sync(vga_h_sync), .vga_v_sync(vga_v_sync), .vga_r(vga_r), .vga_g(vga_g), .vga_b(vga_b), .Sw0(BtnC), .Sw1(Start), .btnU(BtnU), .btnD(BtnD),
+	.St_ce_bar(St_ce_bar), .St_rp_bar(St_rp_bar), .Mt_ce_bar(Mt_ce_bar), .Mt_St_oe_bar(Mt_St_oe_bar), .Mt_St_we_bar(Mt_St_we_bar));
 //------------
 // OUTPUT: LEDS
 	assign Ld7 = DIV_CLK[25];
@@ -134,7 +149,7 @@ ee201_debouncer #(.N_dc(25)) ee201_debouncer_1
 	assign Ld4 = Sw0;
 	assign Ld3 = Sw7 & Sw6 & Sw5 & Sw4 & Sw3 & Sw2 & Sw1; // Just to combine unused inputs and outputs so that we can use the UCF
 	                                          //  file with all basic I/O resources uniformly with all our designs ;
-	assign {Ld2, Ld1, Ld0} = {BtnL, DOT, DASH};
+	assign {Ld2, Ld1, Ld0} = {BtnL, ~DOT, ~DASH};
 //------------
 // SSD (Seven Segment Display)
 	// reg [3:0]	SSD;
@@ -218,4 +233,4 @@ ee201_debouncer #(.N_dc(25)) ee201_debouncer_1
 	// reg [7:0]  SSD_CATHODES;
 	assign {Ca, Cb, Cc, Cd, Ce, Cf, Cg, Dp} = {SSD_CATHODES};
 	
-endmodule
+	endmodule
