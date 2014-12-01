@@ -1,43 +1,37 @@
-Release 13.2 par O.61xd (nt64)
-Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+Release 14.7 par P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-KEVINSU-PC::  Sun Nov 30 18:31:31 2014
+CHEN-PC::  Sun Nov 30 19:28:06 2014
 
 par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd
 morse_code_top.pcf 
 
 
 Constraints file: morse_code_top.pcf.
-Loading device for application Rf_Device from file '6slx16.nph' in environment C:\Xilinx\13.2\ISE_DS\ISE\.
+Loading device for application Rf_Device from file '6slx16.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
    "morse_code_top" is an NCD, version 3.2, device xc6slx16, package csg324, speed -3
-vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-INFO:Security:54 - 'xc6slx16' is a WebPack part.
-WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue
-to function, but you no longer qualify for Xilinx software updates or new releases.
-
-----------------------------------------------------------------------
 
 Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
 Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.260 Volts)
 
 
-Device speed data version:  "PRODUCTION 1.19 2011-06-20".
+Device speed data version:  "PRODUCTION 1.23 2013-10-13".
 
 
 
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                   344 out of  18,224    1%
-    Number used as Flip Flops:                 315
+  Number of Slice Registers:                   376 out of  18,224    2%
+    Number used as Flip Flops:                 347
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:               29
-  Number of Slice LUTs:                      2,172 out of   9,112   23%
-    Number used as logic:                    2,163 out of   9,112   23%
-      Number using O6 output only:           1,572
-      Number using O5 output only:             185
-      Number using O5 and O6:                  406
+  Number of Slice LUTs:                      2,279 out of   9,112   25%
+    Number used as logic:                    2,270 out of   9,112   24%
+      Number using O6 output only:           1,616
+      Number using O5 output only:             206
+      Number using O5 and O6:                  448
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   2,176    0%
     Number used exclusively as route-thrus:      9
@@ -46,11 +40,12 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   625 out of   2,278   27%
-  Number of LUT Flip Flop pairs used:        2,174
-    Number with an unused Flip Flop:         1,834 out of   2,174   84%
-    Number with an unused LUT:                   2 out of   2,174    1%
-    Number of fully used LUT-FF pairs:         338 out of   2,174   15%
+  Number of occupied Slices:                   620 out of   2,278   27%
+  Number of MUXCYs used:                       868 out of   4,556   19%
+  Number of LUT Flip Flop pairs used:        2,281
+    Number with an unused Flip Flop:         1,913 out of   2,281   83%
+    Number with an unused LUT:                   2 out of   2,281    1%
+    Number of fully used LUT-FF pairs:         366 out of   2,281   16%
     Number of slice register sites lost
       to control set restrictions:               0 out of  18,224    0%
 
@@ -62,7 +57,7 @@ Slice Logic Distribution:
 
 IO Utilization:
   Number of bonded IOBs:                        48 out of     232   20%
-    Number of LOCed IOBs:                       36 out of      48   75%
+    Number of LOCed IOBs:                       37 out of      48   77%
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
@@ -93,16 +88,126 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 34 secs 
-Finished initial Timing Analysis.  REAL time: 34 secs 
+Starting initial Timing Analysis.  REAL time: 3 secs 
+Finished initial Timing Analysis.  REAL time: 3 secs 
 
 WARNING:Par:288 - The signal BtnD_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal BtnU_IBUF has no load.  PAR will not attempt to route this signal.
 Starting Router
 
 
-Phase  1  : 11532 unrouted;      REAL time: 34 secs 
+Phase  1  : 12049 unrouted;      REAL time: 3 secs 
 
-Phase  2  : 10799 unrouted;      REAL time: 34 secs 
+Phase  2  : 11251 unrouted;      REAL time: 4 secs 
 
-Phase  3  : 2903 unrouted;      REAL time: 38 secs 
+Phase  3  : 3221 unrouted;      REAL time: 8 secs 
+
+Phase  4  : 4346 unrouted; (Setup:4820477, Hold:0, Component Switching Limit:0)     REAL time: 16 secs 
+
+Updating file: morse_code_top.ncd with current fully routed design.
+
+Phase  5  : 0 unrouted; (Setup:4972132, Hold:0, Component Switching Limit:0)     REAL time: 48 secs 
+
+Phase  6  : 0 unrouted; (Setup:5019434, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 40 secs 
+
+Updating file: morse_code_top.ncd with current fully routed design.
+
+Phase  7  : 0 unrouted; (Setup:4988153, Hold:0, Component Switching Limit:0)     REAL time: 3 mins 5 secs 
+
+Phase  8  : 0 unrouted; (Setup:4988153, Hold:0, Component Switching Limit:0)     REAL time: 3 mins 5 secs 
+
+Phase  9  : 0 unrouted; (Setup:4988153, Hold:0, Component Switching Limit:0)     REAL time: 3 mins 5 secs 
+
+Phase 10  : 0 unrouted; (Setup:4983748, Hold:0, Component Switching Limit:0)     REAL time: 3 mins 5 secs 
+Total REAL time to Router completion: 3 mins 5 secs 
+Total CPU time to Router completion: 3 mins 9 secs 
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++---------------------+--------------+------+------+------------+-------------+
+|        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
++---------------------+--------------+------+------+------------+-------------+
+|           board_clk | BUFGMUX_X3Y13| No   |   99 |  0.064     |  0.910      |
++---------------------+--------------+------+------+------------+-------------+
+|VGA_1/DIV_CLK_1_BUFG |              |      |      |            |             |
+|                     |  BUFGMUX_X2Y3| No   |   11 |  0.021     |  0.874      |
++---------------------+--------------+------+------+------------+-------------+
+|   VGA_1/DIV_CLK<21> |         Local|      |    8 |  1.636     |  2.363      |
++---------------------+--------------+------+------+------------+-------------+
+
+* Net Skew is the difference between the minimum and maximum routing
+only delays for the net. Note this is different from Clock Skew which
+is reported in TRCE timing report. Clock Skew is the difference between
+the minimum and maximum path delays which includes logic delays.
+
+* The fanout is the number of component pins not the individual BEL loads,
+for example SLICE loads not FF loads.
+
+Timing Score: 4983748 (Setup: 4983748, Hold: 0, Component Switching Limit: 0)
+
+WARNING:Par:468 - Your design did not meet timing.  The following are some suggestions to assist you to meet timing in your design.
+
+   Review the timing report using Timing Analyzer (In ISE select "Post-Place &
+   Route Static Timing Report"). Go to the failing constraint(s) and evaluate the failing paths for each constraint.
+
+   Try the Design Goal and Strategies for Timing Performance(In ISE select Project -> Design Goals & Strategies) to ensure the best options
+   are set in the tools for timing closure.
+
+   Use the Xilinx "SmartXplorer" script to try special combinations of
+   options known to produce very good results.
+
+   Visit the Xilinx technical support web at http://support.xilinx.com and go to
+   either "Troubleshoot->Tech Tips->Timing & Constraints" or "
+   TechXclusives->Timing Closure" for tips and suggestions for meeting timing
+   in your design.
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+* TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_ | SETUP       |   -54.472ns|    64.472ns|     160|     4983748
+  pin" 100 MHz HIGH 50%                     | HOLD        |     0.417ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+
+
+1 constraint not met.
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+WARNING:Par:283 - There are 2 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+
+Total REAL time to PAR completion: 3 mins 7 secs 
+Total CPU time to PAR completion: 3 mins 11 secs 
+
+Peak Memory Usage:  282 MB
+
+Placer: Placement generated during map.
+Routing: Completed - No errors found.
+Timing: Completed - 160 errors found.
+
+Number of error messages: 0
+Number of warning messages: 5
+Number of info messages: 0
+
+Writing design to file morse_code_top.ncd
+
+
+
+PAR done!

@@ -4,9 +4,9 @@
 // Author:  Da Cheng
 // Modified: Joseph Chen
 //////////////////////////////////////////////////////////////////////////////////
-module vga_demo(ClkPort, vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b, Sw0, Sw1, btnU, btnD, btnL,
-	St_ce_bar, St_rp_bar, Mt_ce_bar, Mt_St_oe_bar, Mt_St_we_bar, qA, qB, qC, qD, qE, qF, qG, qH, qI, qJ, qK, qL, qM, qN, qO, qP, qQ, qR, qS, qT, qU, qV, qW, qX, qY, qZ);
-	input ClkPort, Sw0, btnU, btnD, btnL, Sw0, Sw1, qA, qB, qC, qD, qE, qF, qG, qH, qI, qJ, qK, qL, qM, qN, qO, qP, qQ, qR, qS, qT, qU, qV, qW, qX, qY, qZ;
+module vga_demo(ClkPort, vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b, Sw0, Sw1, btnU, btnD,
+	St_ce_bar, St_rp_bar, Mt_ce_bar, Mt_St_oe_bar, Mt_St_we_bar, qA, qB, qC, qD, qE, qF, qG, qH, qI, qJ, qK, qL, qM, qN, qO, qP, qQ, qR, qS, qT, qU, qV, qW, qX, qY, qZ, letter_code);
+	input ClkPort, btnU, btnD, Sw0, Sw1, qA, qB, qC, qD, qE, qF, qG, qH, qI, qJ, qK, qL, qM, qN, qO, qP, qQ, qR, qS, qT, qU, qV, qW, qX, qY, qZ, letter_code;
 	output St_ce_bar, St_rp_bar, Mt_ce_bar, Mt_St_oe_bar, Mt_St_we_bar;
 	output vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b;
 	reg vga_r, vga_g, vga_b;
@@ -98,7 +98,7 @@ module vga_demo(ClkPort, vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b, Sw0, Sw1, 
 					tone4XStart <= 500;
 					tone4XEnd <= 520;
 				end
-			else if (qC)
+			else if (qC)		//C
 				begin
 					tone1XStart <= 130;
 					tone1XEnd <= 170;
@@ -109,7 +109,7 @@ module vga_demo(ClkPort, vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b, Sw0, Sw1, 
 					tone4XStart <= 500;
 					tone4XEnd <= 520;
 				end
-			else if (qD)
+			else if (qD)		//D
 				begin
 					tone1XStart <= 130;
 					tone1XEnd <= 170;
@@ -120,7 +120,7 @@ module vga_demo(ClkPort, vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b, Sw0, Sw1, 
 					tone4XStart <= 0;
 					tone4XEnd <= 0;
 				end
-			else if (qE)
+			else if (qE)		//E
 				begin
 					tone1XStart <= 140;
 					tone1XEnd <= 160;
@@ -131,7 +131,7 @@ module vga_demo(ClkPort, vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b, Sw0, Sw1, 
 					tone4XStart <= 0;
 					tone4XEnd <= 0;
 				end
-			else if (qF)
+			else if (qF)		//F
 				begin
 					tone1XStart <= 140;
 					tone1XEnd <= 160;
@@ -142,7 +142,7 @@ module vga_demo(ClkPort, vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b, Sw0, Sw1, 
 					tone4XStart <= 500;
 					tone4XEnd <= 520;
 				end
-			else if (qG)
+			else if (qG)		//G
 				begin
 					tone1XStart <= 130;
 					tone1XEnd <= 170;
@@ -153,7 +153,7 @@ module vga_demo(ClkPort, vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b, Sw0, Sw1, 
 					tone4XStart <= 0;
 					tone4XEnd <= 0;
 				end
-			else if (qH)
+			else if (qH)		//H
 				begin
 					tone1XStart <= 140;
 					tone1XEnd <= 160;
@@ -164,7 +164,7 @@ module vga_demo(ClkPort, vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b, Sw0, Sw1, 
 					tone4XStart <= 500;
 					tone4XEnd <= 520;
 				end
-			else if (qI)
+			else if (qI)		//I
 				begin
 					tone1XStart <= 140;
 					tone1XEnd <= 160;
@@ -175,7 +175,7 @@ module vga_demo(ClkPort, vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b, Sw0, Sw1, 
 					tone4XStart <= 0;
 					tone4XEnd <= 0;
 				end
-			else if (qJ)
+			else if (qJ)		//J
 				begin
 					tone1XStart <= 140;
 					tone1XEnd <= 160;
@@ -186,7 +186,7 @@ module vga_demo(ClkPort, vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b, Sw0, Sw1, 
 					tone4XStart <= 490;
 					tone4XEnd <= 530;
 				end
-			else if (qK)
+			else if (qK)		//K
 				begin
 					tone1XStart <= 130;
 					tone1XEnd <= 170;
@@ -197,7 +197,7 @@ module vga_demo(ClkPort, vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b, Sw0, Sw1, 
 					tone4XStart <= 0;
 					tone4XEnd <= 0;
 				end
-			else if (qL)
+			else if (qL)		//L
 				begin
 					tone1XStart <= 140;
 					tone1XEnd <= 160;
@@ -208,7 +208,7 @@ module vga_demo(ClkPort, vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b, Sw0, Sw1, 
 					tone4XStart <= 500;
 					tone4XEnd <= 520;
 				end
-			else if (qM)
+			else if (qM)		//M
 				begin
 					tone1XStart <= 130;
 					tone1XEnd <= 170;

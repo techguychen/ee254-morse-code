@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\Kevin Su\Documents\Files\USC\EE 254L\ee254l_project\morse_code_top.ncd
-OUTFILE=C:\Users\Kevin Su\Documents\Files\USC\EE 254L\ee254l_project\morse_code_top.bit
+INFILE=C:\Users\Chen\Documents\1USC\EE-254\ee254-morse-code\ee254l_project\morse_code_top.ncd
+OUTFILE=C:\Users\Chen\Documents\1USC\EE-254\ee254-morse-code\ee254l_project\morse_code_top.bit
 FAMILY=Spartan6
 PART=xc6slx16-3csg324
-WORKINGDIR=C:\Users\Kevin Su\Documents\Files\USC\EE 254L\ee254l_project
+WORKINGDIR=C:\Users\Chen\Documents\1USC\EE-254\ee254-morse-code\ee254l_project
 LICENSE=WebPack
-USER_INFO=210803679_0_0_117
+USER_INFO=210851020_0_0_551

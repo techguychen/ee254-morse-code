@@ -1,0 +1,683 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: vga_demo.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "vga_demo.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "vga_demo"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : vga_demo
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\Chen\Documents\1USC\EE-254\ee254-morse-code\VGA_morse\hvsync_generator.v" into library work
+Parsing module <hvsync_generator>.
+Analyzing Verilog file "C:\Users\Chen\Documents\1USC\EE-254\ee254-morse-code\VGA_morse\vga_demo.v" into library work
+Parsing module <vga_demo>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <vga_demo>.
+
+Elaborating module <BUF>.
+WARNING:HDLCompiler:1127 - "C:\Users\Chen\Documents\1USC\EE-254\ee254-morse-code\VGA_morse\vga_demo.v" Line 21: Assignment to start ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Chen\Documents\1USC\EE-254\ee254-morse-code\VGA_morse\vga_demo.v" Line 32: Assignment to button_clk ignored, since the identifier is never used
+
+Elaborating module <hvsync_generator>.
+WARNING:HDLCompiler:413 - "C:\Users\Chen\Documents\1USC\EE-254\ee254-morse-code\VGA_morse\hvsync_generator.v" Line 34: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Chen\Documents\1USC\EE-254\ee254-morse-code\VGA_morse\hvsync_generator.v" Line 44: Result of 11-bit expression is truncated to fit in 10-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <vga_demo>.
+    Related source file is "C:\Users\Chen\Documents\1USC\EE-254\ee254-morse-code\VGA_morse\vga_demo.v".
+WARNING:Xst:647 - Input <btnL> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Register <vga_r> equivalent to <vga_g> has been removed
+    Found 28-bit register for signal <DIV_CLK>.
+    Found 10-bit register for signal <tone1XStart>.
+    Found 10-bit register for signal <tone1XEnd>.
+    Found 10-bit register for signal <tone2XStart>.
+    Found 10-bit register for signal <tone2XEnd>.
+    Found 10-bit register for signal <tone3XStart>.
+    Found 10-bit register for signal <tone3XEnd>.
+    Found 10-bit register for signal <tone4XStart>.
+    Found 10-bit register for signal <tone4XEnd>.
+    Found 1-bit register for signal <vga_g>.
+    Found 1-bit register for signal <vga_b>.
+    Found 28-bit adder for signal <DIV_CLK[27]_GND_1_o_add_0_OUT> created at line 29.
+    Found 10-bit comparator lessequal for signal <n0043> created at line 375
+    Found 10-bit comparator lessequal for signal <n0045> created at line 375
+    Found 10-bit comparator lessequal for signal <n0048> created at line 375
+    Found 10-bit comparator lessequal for signal <n0051> created at line 375
+    Found 10-bit comparator lessequal for signal <n0054> created at line 376
+    Found 10-bit comparator lessequal for signal <n0057> created at line 376
+    Found 10-bit comparator lessequal for signal <n0060> created at line 377
+    Found 10-bit comparator lessequal for signal <n0063> created at line 377
+    Found 10-bit comparator lessequal for signal <n0066> created at line 378
+    Found 10-bit comparator lessequal for signal <n0069> created at line 378
+    Found 10-bit comparator lessequal for signal <n0075> created at line 381
+    Found 10-bit comparator lessequal for signal <n0077> created at line 381
+    Found 10-bit comparator lessequal for signal <n0080> created at line 381
+    Found 10-bit comparator lessequal for signal <n0083> created at line 381
+    Found 10-bit comparator lessequal for signal <n0086> created at line 382
+    Found 10-bit comparator lessequal for signal <n0089> created at line 382
+    Found 10-bit comparator lessequal for signal <n0092> created at line 383
+    Found 10-bit comparator lessequal for signal <n0095> created at line 383
+    Found 10-bit comparator lessequal for signal <n0098> created at line 384
+    Found 10-bit comparator lessequal for signal <n0101> created at line 384
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred 110 D-type flip-flop(s).
+	inferred  20 Comparator(s).
+Unit <vga_demo> synthesized.
+
+Synthesizing Unit <hvsync_generator>.
+    Related source file is "C:\Users\Chen\Documents\1USC\EE-254\ee254-morse-code\VGA_morse\hvsync_generator.v".
+    Found 10-bit register for signal <CounterY>.
+    Found 1-bit register for signal <vga_HS>.
+    Found 1-bit register for signal <vga_VS>.
+    Found 1-bit register for signal <inDisplayArea>.
+    Found 10-bit register for signal <CounterX>.
+    Found 10-bit adder for signal <CounterX[9]_GND_3_o_add_2_OUT> created at line 34.
+    Found 10-bit adder for signal <CounterY[9]_GND_3_o_add_9_OUT> created at line 44.
+    Found 10-bit comparator greater for signal <PWR_3_o_CounterX[9]_LessThan_16_o> created at line 49
+    Found 10-bit comparator greater for signal <CounterX[9]_PWR_3_o_LessThan_17_o> created at line 49
+    Found 10-bit comparator greater for signal <CounterX[9]_PWR_3_o_LessThan_21_o> created at line 58
+    Found 10-bit comparator greater for signal <CounterY[9]_GND_3_o_LessThan_22_o> created at line 58
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  23 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+Unit <hvsync_generator> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 10-bit adder                                          : 2
+ 28-bit adder                                          : 1
+# Registers                                            : 16
+ 1-bit register                                        : 5
+ 10-bit register                                       : 10
+ 28-bit register                                       : 1
+# Comparators                                          : 24
+ 10-bit comparator greater                             : 4
+ 10-bit comparator lessequal                           : 20
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <tone3XStart_7> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_1> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_2> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_4> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_5> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_6> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_7> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_8> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_1> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_2> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_3> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_5> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_6> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_1> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_3> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_4> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_5> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_6> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_8> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_2> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_4> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_6> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_8> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_2> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_6> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_7> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_1> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <hvsync_generator>.
+The following registers are absorbed into counter <CounterX>: 1 register on signal <CounterX>.
+The following registers are absorbed into counter <CounterY>: 1 register on signal <CounterY>.
+Unit <hvsync_generator> synthesized (advanced).
+
+Synthesizing (advanced) Unit <vga_demo>.
+The following registers are absorbed into counter <DIV_CLK>: 1 register on signal <DIV_CLK>.
+Unit <vga_demo> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 3
+ 10-bit up counter                                     : 2
+ 28-bit up counter                                     : 1
+# Registers                                            : 85
+ Flip-Flops                                            : 85
+# Comparators                                          : 24
+ 10-bit comparator greater                             : 4
+ 10-bit comparator lessequal                           : 20
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <tone3XStart_7> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_1> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_2> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_4> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_5> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_6> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_7> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_8> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_1> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_2> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_3> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_5> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_6> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_1> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_3> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_4> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_5> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_6> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_8> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_2> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_4> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_6> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_8> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_2> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_6> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_7> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_1> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <tone1XStart_7> in Unit <vga_demo> is equivalent to the following 3 FFs/Latches, which will be removed : <tone1XEnd_5> <tone1XEnd_7> <tone2XEnd_8> 
+INFO:Xst:2261 - The FF/Latch <tone1XStart_2> in Unit <vga_demo> is equivalent to the following 9 FFs/Latches, which will be removed : <tone1XStart_3> <tone2XStart_1> <tone2XStart_3> <tone2XStart_4> <tone2XStart_5> <tone2XStart_6> <tone2XStart_7> <tone2XEnd_1> <tone2XEnd_5> 
+INFO:Xst:2261 - The FF/Latch <tone1XStart_1> in Unit <vga_demo> is equivalent to the following 23 FFs/Latches, which will be removed : <tone1XEnd_1> <tone1XEnd_3> <tone2XStart_2> <tone2XStart_8> <tone2XEnd_3> <tone2XEnd_4> <tone3XStart_2> <tone3XStart_3> <tone3XStart_4> <tone3XStart_5> <tone3XStart_6> <tone3XStart_8> <tone4XEnd_3> <tone4XEnd_9> <tone3XEnd_4> <tone3XEnd_7> <tone3XEnd_8> <tone4XStart_2> <tone4XStart_4> <tone4XStart_5> <tone4XStart_6> <tone4XStart_7> <tone4XStart_8> 
+WARNING:Xst:2677 - Node <DIV_CLK_22> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_23> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_24> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_25> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_26> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_27> of sequential type is unconnected in block <vga_demo>.
+
+Optimizing unit <vga_demo> ...
+
+Optimizing unit <hvsync_generator> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block vga_demo, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 50
+ Flip-Flops                                            : 50
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : vga_demo.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 194
+#      BUF                         : 3
+#      GND                         : 1
+#      INV                         : 5
+#      LUT1                        : 39
+#      LUT2                        : 5
+#      LUT3                        : 14
+#      LUT4                        : 6
+#      LUT5                        : 10
+#      LUT6                        : 27
+#      MUXCY                       : 39
+#      MUXF7                       : 2
+#      VCC                         : 1
+#      XORCY                       : 42
+# FlipFlops/Latches                : 50
+#      FD                          : 16
+#      FDC                         : 22
+#      FDRE                        : 12
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 14
+#      IBUF                        : 4
+#      OBUF                        : 10
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              50  out of  18224     0%  
+ Number of Slice LUTs:                  106  out of   9112     1%  
+    Number used as Logic:               106  out of   9112     1%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    107
+   Number with an unused Flip Flop:      57  out of    107    53%  
+   Number with an unused LUT:             1  out of    107     0%  
+   Number of fully used LUT-FF pairs:    49  out of    107    45%  
+   Number of unique control sets:         5
+
+IO Utilization: 
+ Number of IOs:                          16
+ Number of bonded IOBs:                  15  out of    232     6%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+DIV_CLK_21                         | NONE(tone1XStart_2)    | 3     |
+ClkPort                            | BUFGP                  | 22    |
+DIV_CLK_1                          | BUFG                   | 25    |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.584ns (Maximum Frequency: 218.157MHz)
+   Minimum input arrival time before clock: 5.585ns
+   Maximum output required time after clock: 4.382ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ClkPort'
+  Clock period: 2.066ns (frequency: 484.062MHz)
+  Total number of paths / destination ports: 253 / 22
+-------------------------------------------------------------------------
+Delay:               2.066ns (Levels of Logic = 23)
+  Source:            DIV_CLK_0 (FF)
+  Destination:       DIV_CLK_21 (FF)
+  Source Clock:      ClkPort rising
+  Destination Clock: ClkPort rising
+
+  Data Path: DIV_CLK_0 to DIV_CLK_21
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.447   0.579  DIV_CLK_0 (DIV_CLK_0)
+     INV:I->O              1   0.206   0.000  Mcount_DIV_CLK_lut<0>_INV_0 (Mcount_DIV_CLK_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  Mcount_DIV_CLK_cy<0> (Mcount_DIV_CLK_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<1> (Mcount_DIV_CLK_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<2> (Mcount_DIV_CLK_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<3> (Mcount_DIV_CLK_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<4> (Mcount_DIV_CLK_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<5> (Mcount_DIV_CLK_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<6> (Mcount_DIV_CLK_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<7> (Mcount_DIV_CLK_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<8> (Mcount_DIV_CLK_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<9> (Mcount_DIV_CLK_cy<9>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<10> (Mcount_DIV_CLK_cy<10>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<11> (Mcount_DIV_CLK_cy<11>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<12> (Mcount_DIV_CLK_cy<12>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<13> (Mcount_DIV_CLK_cy<13>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<14> (Mcount_DIV_CLK_cy<14>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<15> (Mcount_DIV_CLK_cy<15>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<16> (Mcount_DIV_CLK_cy<16>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<17> (Mcount_DIV_CLK_cy<17>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<18> (Mcount_DIV_CLK_cy<18>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<19> (Mcount_DIV_CLK_cy<19>)
+     MUXCY:CI->O           0   0.019   0.000  Mcount_DIV_CLK_cy<20> (Mcount_DIV_CLK_cy<20>)
+     XORCY:CI->O           1   0.180   0.000  Mcount_DIV_CLK_xor<21> (Result<21>)
+     FDC:D                     0.102          DIV_CLK_21
+    ----------------------------------------
+    Total                      2.066ns (1.487ns logic, 0.579ns route)
+                                       (72.0% logic, 28.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'DIV_CLK_1'
+  Clock period: 4.584ns (frequency: 218.157MHz)
+  Total number of paths / destination ports: 585 / 45
+-------------------------------------------------------------------------
+Delay:               4.584ns (Levels of Logic = 4)
+  Source:            syncgen/CounterX_6 (FF)
+  Destination:       vga_g (FF)
+  Source Clock:      DIV_CLK_1 rising
+  Destination Clock: DIV_CLK_1 rising
+
+  Data Path: syncgen/CounterX_6 to vga_g
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              15   0.447   1.210  syncgen/CounterX_6 (syncgen/CounterX_6)
+     LUT3:I0->O            2   0.205   0.617  CounterX[9]_tone3XEnd[9]_LessThan_64_o221 (CounterX[9]_tone3XEnd[9]_LessThan_64_o22)
+     LUT6:I5->O            1   0.205   0.580  tones_inv7 (tones_inv7)
+     LUT6:I5->O            1   0.205   0.808  tones_inv8 (tones_inv8)
+     LUT6:I3->O            1   0.205   0.000  vga_g_rstpot (vga_g_rstpot)
+     FD:D                      0.102          vga_g
+    ----------------------------------------
+    Total                      4.584ns (1.369ns logic, 3.215ns route)
+                                       (29.9% logic, 70.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'DIV_CLK_21'
+  Clock period: 1.865ns (frequency: 536.107MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.865ns (Levels of Logic = 1)
+  Source:            tone1XStart_1 (FF)
+  Destination:       tone1XStart_1 (FF)
+  Source Clock:      DIV_CLK_21 rising
+  Destination Clock: DIV_CLK_21 rising
+
+  Data Path: tone1XStart_1 to tone1XStart_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              11   0.447   1.111  tone1XStart_1 (tone1XStart_1)
+     LUT4:I1->O            1   0.205   0.000  tone1XStart_1_rstpot1 (tone1XStart_1_rstpot1)
+     FD:D                      0.102          tone1XStart_1
+    ----------------------------------------
+    Total                      1.865ns (0.754ns logic, 1.111ns route)
+                                       (40.4% logic, 59.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'DIV_CLK_21'
+  Total number of paths / destination ports: 11 / 6
+-------------------------------------------------------------------------
+Offset:              4.284ns (Levels of Logic = 3)
+  Source:            Sw0 (PAD)
+  Destination:       tone1XStart_1 (FF)
+  Destination Clock: DIV_CLK_21 rising
+
+  Data Path: Sw0 to tone1XStart_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.579  Sw0_IBUF (Sw0_IBUF)
+     BUF:I->O             37   0.568   1.610  BUF2 (reset)
+     LUT4:I0->O            1   0.203   0.000  tone1XStart_1_rstpot1 (tone1XStart_1_rstpot1)
+     FD:D                      0.102          tone1XStart_1
+    ----------------------------------------
+    Total                      4.284ns (2.095ns logic, 2.189ns route)
+                                       (48.9% logic, 51.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ClkPort'
+  Total number of paths / destination ports: 22 / 22
+-------------------------------------------------------------------------
+Offset:              4.161ns (Levels of Logic = 2)
+  Source:            Sw0 (PAD)
+  Destination:       DIV_CLK_0 (FF)
+  Destination Clock: ClkPort rising
+
+  Data Path: Sw0 to DIV_CLK_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.579  Sw0_IBUF (Sw0_IBUF)
+     BUF:I->O             37   0.568   1.362  BUF2 (reset)
+     FDC:CLR                   0.430          DIV_CLK_0
+    ----------------------------------------
+    Total                      4.161ns (2.220ns logic, 1.941ns route)
+                                       (53.4% logic, 46.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'DIV_CLK_1'
+  Total number of paths / destination ports: 21 / 21
+-------------------------------------------------------------------------
+Offset:              5.585ns (Levels of Logic = 3)
+  Source:            Sw0 (PAD)
+  Destination:       syncgen/CounterY_0 (FF)
+  Destination Clock: DIV_CLK_1 rising
+
+  Data Path: Sw0 to syncgen/CounterY_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.579  Sw0_IBUF (Sw0_IBUF)
+     BUF:I->O             37   0.568   1.727  BUF2 (reset)
+     LUT6:I0->O           10   0.203   0.856  syncgen/Mcount_CounterY_val (syncgen/Mcount_CounterY_val)
+     FDRE:R                    0.430          syncgen/CounterY_0
+    ----------------------------------------
+    Total                      5.585ns (2.423ns logic, 3.162ns route)
+                                       (43.4% logic, 56.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'DIV_CLK_1'
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Offset:              4.382ns (Levels of Logic = 2)
+  Source:            syncgen/vga_HS (FF)
+  Destination:       vga_h_sync (PAD)
+  Source Clock:      DIV_CLK_1 rising
+
+  Data Path: syncgen/vga_HS to vga_h_sync
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.447   0.579  syncgen/vga_HS (syncgen/vga_HS)
+     INV:I->O              1   0.206   0.579  syncgen/vga_h_sync1_INV_0 (vga_h_sync_OBUF)
+     OBUF:I->O                 2.571          vga_h_sync_OBUF (vga_h_sync)
+    ----------------------------------------
+    Total                      4.382ns (3.224ns logic, 1.158ns route)
+                                       (73.6% logic, 26.4% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock ClkPort
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ClkPort        |    2.066|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock DIV_CLK_1
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+DIV_CLK_1      |    4.584|         |         |         |
+DIV_CLK_21     |    4.423|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock DIV_CLK_21
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+DIV_CLK_21     |    1.865|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.01 secs
+ 
+--> 
+
+Total memory usage is 184756 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   95 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

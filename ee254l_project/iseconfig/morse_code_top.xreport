@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-11-30T18:14:18</DateModified>
+  <DateModified>2014-11-30T18:35:19</DateModified>
   <ModuleName>morse_code_top</ModuleName>
   <SummaryTimeStamp>2014-11-30T18:08:11</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/iseconfig/morse_code_top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/Chen/Documents/1USC/EE-254/ee254-morse-code/ee254l_project/iseconfig/morse_code_top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/Chen/Documents/1USC/EE-254/ee254-morse-code/ee254l_project\</ImplementationReportsDirectory>
   <DateInitialized>2014-11-24T21:18:59</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

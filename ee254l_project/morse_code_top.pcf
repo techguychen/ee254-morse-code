@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map O.61xd on Sun Nov 30 18:31:29 2014
+// Written by: Map P.20131013 on Sun Nov 30 19:28:03 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -25,6 +25,7 @@ COMP "Ld7" LOCATE = SITE "T11" LEVEL 1;
 COMP "Sw0" LOCATE = SITE "T10" LEVEL 1;
 COMP "Sw1" LOCATE = SITE "T9" LEVEL 1;
 COMP "ClkPort" LOCATE = SITE "V10" LEVEL 1;
+COMP "BtnC" LOCATE = SITE "B8" LEVEL 1;
 COMP "BtnD" LOCATE = SITE "C9" LEVEL 1;
 COMP "BtnL" LOCATE = SITE "C4" LEVEL 1;
 COMP "BtnU" LOCATE = SITE "A8" LEVEL 1;
@@ -79,89 +80,95 @@ TIMEGRP sys_clk_pin = BEL "DIV_CLK_0" BEL "DIV_CLK_1" BEL "DIV_CLK_2" BEL
         "ee201_debouncer_1/debounce_count_3" BEL
         "ee201_debouncer_1/debounce_count_2" BEL
         "ee201_debouncer_1/debounce_count_1" BEL
-        "ee201_debouncer_1/debounce_count_0" BEL "VGA_1/DIV_CLK_1" BEL
-        "VGA_1/DIV_CLK_0" BEL "calibration_1/T_count2_31" BEL
-        "calibration_1/T_count2_30" BEL "calibration_1/T_count2_29" BEL
-        "calibration_1/T_count2_28" BEL "calibration_1/T_count2_27" BEL
-        "calibration_1/T_count2_26" BEL "calibration_1/T_count2_25" BEL
-        "calibration_1/T_count2_24" BEL "calibration_1/T_count2_23" BEL
-        "calibration_1/T_count2_22" BEL "calibration_1/T_count2_21" BEL
-        "calibration_1/T_count2_20" BEL "calibration_1/T_count2_19" BEL
-        "calibration_1/T_count2_18" BEL "calibration_1/T_count2_17" BEL
-        "calibration_1/T_count2_16" BEL "calibration_1/T_count2_15" BEL
-        "calibration_1/T_count2_14" BEL "calibration_1/T_count2_13" BEL
-        "calibration_1/T_count2_12" BEL "calibration_1/T_count2_11" BEL
-        "calibration_1/T_count2_10" BEL "calibration_1/T_count2_9" BEL
-        "calibration_1/T_count2_8" BEL "calibration_1/T_count2_7" BEL
-        "calibration_1/T_count2_6" BEL "calibration_1/T_count2_5" BEL
-        "calibration_1/T_count2_4" BEL "calibration_1/T_count2_3" BEL
-        "calibration_1/T_count2_2" BEL "calibration_1/T_count2_1" BEL
-        "calibration_1/T_count2_0" BEL "calibration_1/T_count3_31" BEL
-        "calibration_1/T_count3_30" BEL "calibration_1/T_count3_29" BEL
-        "calibration_1/T_count3_28" BEL "calibration_1/T_count3_27" BEL
-        "calibration_1/T_count3_26" BEL "calibration_1/T_count3_25" BEL
-        "calibration_1/T_count3_24" BEL "calibration_1/T_count3_23" BEL
-        "calibration_1/T_count3_22" BEL "calibration_1/T_count3_21" BEL
-        "calibration_1/T_count3_20" BEL "calibration_1/T_count3_19" BEL
-        "calibration_1/T_count3_18" BEL "calibration_1/T_count3_17" BEL
-        "calibration_1/T_count3_16" BEL "calibration_1/T_count3_15" BEL
-        "calibration_1/T_count3_14" BEL "calibration_1/T_count3_13" BEL
-        "calibration_1/T_count3_12" BEL "calibration_1/T_count3_11" BEL
-        "calibration_1/T_count3_10" BEL "calibration_1/T_count3_9" BEL
-        "calibration_1/T_count3_8" BEL "calibration_1/T_count3_7" BEL
-        "calibration_1/T_count3_6" BEL "calibration_1/T_count3_5" BEL
-        "calibration_1/T_count3_4" BEL "calibration_1/T_count3_3" BEL
-        "calibration_1/T_count3_2" BEL "calibration_1/T_count3_1" BEL
-        "calibration_1/T_count3_0" BEL "calibration_1/T_count1_31" BEL
-        "calibration_1/T_count1_30" BEL "calibration_1/T_count1_29" BEL
-        "calibration_1/T_count1_28" BEL "calibration_1/T_count1_27" BEL
-        "calibration_1/T_count1_26" BEL "calibration_1/T_count1_25" BEL
-        "calibration_1/T_count1_24" BEL "calibration_1/T_count1_23" BEL
-        "calibration_1/T_count1_22" BEL "calibration_1/T_count1_21" BEL
-        "calibration_1/T_count1_20" BEL "calibration_1/T_count1_19" BEL
-        "calibration_1/T_count1_18" BEL "calibration_1/T_count1_17" BEL
-        "calibration_1/T_count1_16" BEL "calibration_1/T_count1_15" BEL
-        "calibration_1/T_count1_14" BEL "calibration_1/T_count1_13" BEL
-        "calibration_1/T_count1_12" BEL "calibration_1/T_count1_11" BEL
-        "calibration_1/T_count1_10" BEL "calibration_1/T_count1_9" BEL
-        "calibration_1/T_count1_8" BEL "calibration_1/T_count1_7" BEL
-        "calibration_1/T_count1_6" BEL "calibration_1/T_count1_5" BEL
-        "calibration_1/T_count1_4" BEL "calibration_1/T_count1_3" BEL
-        "calibration_1/T_count1_2" BEL "calibration_1/T_count1_1" BEL
-        "calibration_1/T_count1_0" BEL "calibration_1/state_FSM_FFd1" BEL
-        "calibration_1/state_FSM_FFd2" BEL "calibration_1/state_FSM_FFd3" BEL
-        "calibration_1/Timeout_30" BEL "calibration_1/Timeout_29" BEL
-        "calibration_1/Timeout_28" BEL "calibration_1/Timeout_27" BEL
-        "calibration_1/Timeout_26" BEL "calibration_1/Timeout_25" BEL
-        "calibration_1/Timeout_24" BEL "calibration_1/Timeout_23" BEL
-        "calibration_1/Timeout_22" BEL "calibration_1/Timeout_21" BEL
-        "calibration_1/Timeout_20" BEL "calibration_1/Timeout_19" BEL
-        "calibration_1/Timeout_18" BEL "calibration_1/Timeout_17" BEL
-        "calibration_1/Timeout_16" BEL "calibration_1/Timeout_15" BEL
-        "calibration_1/Timeout_14" BEL "calibration_1/Timeout_13" BEL
-        "calibration_1/Timeout_12" BEL "calibration_1/Timeout_11" BEL
-        "calibration_1/Timeout_10" BEL "calibration_1/Timeout_9" BEL
-        "calibration_1/Timeout_8" BEL "calibration_1/Timeout_7" BEL
-        "calibration_1/Timeout_6" BEL "calibration_1/Timeout_5" BEL
-        "calibration_1/Timeout_4" BEL "calibration_1/Timeout_3" BEL
-        "calibration_1/Timeout_2" BEL "calibration_1/Timeout_1" BEL
-        "calibration_1/Timeout_0" BEL "calibration_1/dash_cnt_2" BEL
-        "calibration_1/dash_cnt_1" BEL "calibration_1/dash_cnt_0" BEL
-        "calibration_1/dot_cnt_2" BEL "calibration_1/dot_cnt_1" BEL
-        "calibration_1/dot_cnt_0" BEL "dot_dash_1/state" BEL
-        "wait_timer_1/I_31" BEL "wait_timer_1/I_30" BEL "wait_timer_1/I_29"
-        BEL "wait_timer_1/I_28" BEL "wait_timer_1/I_27" BEL
-        "wait_timer_1/I_26" BEL "wait_timer_1/I_25" BEL "wait_timer_1/I_24"
-        BEL "wait_timer_1/I_23" BEL "wait_timer_1/I_22" BEL
-        "wait_timer_1/I_21" BEL "wait_timer_1/I_20" BEL "wait_timer_1/I_19"
-        BEL "wait_timer_1/I_18" BEL "wait_timer_1/I_17" BEL
-        "wait_timer_1/I_16" BEL "wait_timer_1/I_15" BEL "wait_timer_1/I_14"
-        BEL "wait_timer_1/I_13" BEL "wait_timer_1/I_12" BEL
-        "wait_timer_1/I_11" BEL "wait_timer_1/I_10" BEL "wait_timer_1/I_9" BEL
-        "wait_timer_1/I_8" BEL "wait_timer_1/I_7" BEL "wait_timer_1/I_6" BEL
-        "wait_timer_1/I_5" BEL "wait_timer_1/I_4" BEL "wait_timer_1/I_3" BEL
-        "wait_timer_1/I_2" BEL "wait_timer_1/I_1" BEL "wait_timer_1/I_0" BEL
-        "wait_timer_1/T" BEL "wait_timer_1/state" BEL
+        "ee201_debouncer_1/debounce_count_0" BEL "VGA_1/DIV_CLK_21" BEL
+        "VGA_1/DIV_CLK_20" BEL "VGA_1/DIV_CLK_19" BEL "VGA_1/DIV_CLK_18" BEL
+        "VGA_1/DIV_CLK_17" BEL "VGA_1/DIV_CLK_16" BEL "VGA_1/DIV_CLK_15" BEL
+        "VGA_1/DIV_CLK_14" BEL "VGA_1/DIV_CLK_13" BEL "VGA_1/DIV_CLK_12" BEL
+        "VGA_1/DIV_CLK_11" BEL "VGA_1/DIV_CLK_10" BEL "VGA_1/DIV_CLK_9" BEL
+        "VGA_1/DIV_CLK_8" BEL "VGA_1/DIV_CLK_7" BEL "VGA_1/DIV_CLK_6" BEL
+        "VGA_1/DIV_CLK_5" BEL "VGA_1/DIV_CLK_4" BEL "VGA_1/DIV_CLK_3" BEL
+        "VGA_1/DIV_CLK_2" BEL "VGA_1/DIV_CLK_1" BEL "VGA_1/DIV_CLK_0" BEL
+        "calibration_1/T_count2_31" BEL "calibration_1/T_count2_30" BEL
+        "calibration_1/T_count2_29" BEL "calibration_1/T_count2_28" BEL
+        "calibration_1/T_count2_27" BEL "calibration_1/T_count2_26" BEL
+        "calibration_1/T_count2_25" BEL "calibration_1/T_count2_24" BEL
+        "calibration_1/T_count2_23" BEL "calibration_1/T_count2_22" BEL
+        "calibration_1/T_count2_21" BEL "calibration_1/T_count2_20" BEL
+        "calibration_1/T_count2_19" BEL "calibration_1/T_count2_18" BEL
+        "calibration_1/T_count2_17" BEL "calibration_1/T_count2_16" BEL
+        "calibration_1/T_count2_15" BEL "calibration_1/T_count2_14" BEL
+        "calibration_1/T_count2_13" BEL "calibration_1/T_count2_12" BEL
+        "calibration_1/T_count2_11" BEL "calibration_1/T_count2_10" BEL
+        "calibration_1/T_count2_9" BEL "calibration_1/T_count2_8" BEL
+        "calibration_1/T_count2_7" BEL "calibration_1/T_count2_6" BEL
+        "calibration_1/T_count2_5" BEL "calibration_1/T_count2_4" BEL
+        "calibration_1/T_count2_3" BEL "calibration_1/T_count2_2" BEL
+        "calibration_1/T_count2_1" BEL "calibration_1/T_count2_0" BEL
+        "calibration_1/T_count3_31" BEL "calibration_1/T_count3_30" BEL
+        "calibration_1/T_count3_29" BEL "calibration_1/T_count3_28" BEL
+        "calibration_1/T_count3_27" BEL "calibration_1/T_count3_26" BEL
+        "calibration_1/T_count3_25" BEL "calibration_1/T_count3_24" BEL
+        "calibration_1/T_count3_23" BEL "calibration_1/T_count3_22" BEL
+        "calibration_1/T_count3_21" BEL "calibration_1/T_count3_20" BEL
+        "calibration_1/T_count3_19" BEL "calibration_1/T_count3_18" BEL
+        "calibration_1/T_count3_17" BEL "calibration_1/T_count3_16" BEL
+        "calibration_1/T_count3_15" BEL "calibration_1/T_count3_14" BEL
+        "calibration_1/T_count3_13" BEL "calibration_1/T_count3_12" BEL
+        "calibration_1/T_count3_11" BEL "calibration_1/T_count3_10" BEL
+        "calibration_1/T_count3_9" BEL "calibration_1/T_count3_8" BEL
+        "calibration_1/T_count3_7" BEL "calibration_1/T_count3_6" BEL
+        "calibration_1/T_count3_5" BEL "calibration_1/T_count3_4" BEL
+        "calibration_1/T_count3_3" BEL "calibration_1/T_count3_2" BEL
+        "calibration_1/T_count3_1" BEL "calibration_1/T_count3_0" BEL
+        "calibration_1/T_count1_31" BEL "calibration_1/T_count1_30" BEL
+        "calibration_1/T_count1_29" BEL "calibration_1/T_count1_28" BEL
+        "calibration_1/T_count1_27" BEL "calibration_1/T_count1_26" BEL
+        "calibration_1/T_count1_25" BEL "calibration_1/T_count1_24" BEL
+        "calibration_1/T_count1_23" BEL "calibration_1/T_count1_22" BEL
+        "calibration_1/T_count1_21" BEL "calibration_1/T_count1_20" BEL
+        "calibration_1/T_count1_19" BEL "calibration_1/T_count1_18" BEL
+        "calibration_1/T_count1_17" BEL "calibration_1/T_count1_16" BEL
+        "calibration_1/T_count1_15" BEL "calibration_1/T_count1_14" BEL
+        "calibration_1/T_count1_13" BEL "calibration_1/T_count1_12" BEL
+        "calibration_1/T_count1_11" BEL "calibration_1/T_count1_10" BEL
+        "calibration_1/T_count1_9" BEL "calibration_1/T_count1_8" BEL
+        "calibration_1/T_count1_7" BEL "calibration_1/T_count1_6" BEL
+        "calibration_1/T_count1_5" BEL "calibration_1/T_count1_4" BEL
+        "calibration_1/T_count1_3" BEL "calibration_1/T_count1_2" BEL
+        "calibration_1/T_count1_1" BEL "calibration_1/T_count1_0" BEL
+        "calibration_1/state_FSM_FFd1" BEL "calibration_1/state_FSM_FFd2" BEL
+        "calibration_1/state_FSM_FFd3" BEL "calibration_1/Timeout_30" BEL
+        "calibration_1/Timeout_29" BEL "calibration_1/Timeout_28" BEL
+        "calibration_1/Timeout_27" BEL "calibration_1/Timeout_26" BEL
+        "calibration_1/Timeout_25" BEL "calibration_1/Timeout_24" BEL
+        "calibration_1/Timeout_23" BEL "calibration_1/Timeout_22" BEL
+        "calibration_1/Timeout_21" BEL "calibration_1/Timeout_20" BEL
+        "calibration_1/Timeout_19" BEL "calibration_1/Timeout_18" BEL
+        "calibration_1/Timeout_17" BEL "calibration_1/Timeout_16" BEL
+        "calibration_1/Timeout_15" BEL "calibration_1/Timeout_14" BEL
+        "calibration_1/Timeout_13" BEL "calibration_1/Timeout_12" BEL
+        "calibration_1/Timeout_11" BEL "calibration_1/Timeout_10" BEL
+        "calibration_1/Timeout_9" BEL "calibration_1/Timeout_8" BEL
+        "calibration_1/Timeout_7" BEL "calibration_1/Timeout_6" BEL
+        "calibration_1/Timeout_5" BEL "calibration_1/Timeout_4" BEL
+        "calibration_1/Timeout_3" BEL "calibration_1/Timeout_2" BEL
+        "calibration_1/Timeout_1" BEL "calibration_1/Timeout_0" BEL
+        "calibration_1/dash_cnt_2" BEL "calibration_1/dash_cnt_1" BEL
+        "calibration_1/dash_cnt_0" BEL "calibration_1/dot_cnt_2" BEL
+        "calibration_1/dot_cnt_1" BEL "calibration_1/dot_cnt_0" BEL
+        "dot_dash_1/state" BEL "wait_timer_1/I_31" BEL "wait_timer_1/I_30" BEL
+        "wait_timer_1/I_29" BEL "wait_timer_1/I_28" BEL "wait_timer_1/I_27"
+        BEL "wait_timer_1/I_26" BEL "wait_timer_1/I_25" BEL
+        "wait_timer_1/I_24" BEL "wait_timer_1/I_23" BEL "wait_timer_1/I_22"
+        BEL "wait_timer_1/I_21" BEL "wait_timer_1/I_20" BEL
+        "wait_timer_1/I_19" BEL "wait_timer_1/I_18" BEL "wait_timer_1/I_17"
+        BEL "wait_timer_1/I_16" BEL "wait_timer_1/I_15" BEL
+        "wait_timer_1/I_14" BEL "wait_timer_1/I_13" BEL "wait_timer_1/I_12"
+        BEL "wait_timer_1/I_11" BEL "wait_timer_1/I_10" BEL "wait_timer_1/I_9"
+        BEL "wait_timer_1/I_8" BEL "wait_timer_1/I_7" BEL "wait_timer_1/I_6"
+        BEL "wait_timer_1/I_5" BEL "wait_timer_1/I_4" BEL "wait_timer_1/I_3"
+        BEL "wait_timer_1/I_2" BEL "wait_timer_1/I_1" BEL "wait_timer_1/I_0"
+        BEL "wait_timer_1/T" BEL "wait_timer_1/state" BEL
         "letter_sm_1/state_FSM_FFd1" BEL "letter_sm_1/state_FSM_FFd2" BEL
         "letter_sm_1/state_FSM_FFd3" BEL "letter_sm_1/state_FSM_FFd4" BEL
         "letter_sm_1/state_FSM_FFd5" BEL "letter_sm_1/state_FSM_FFd6" BEL

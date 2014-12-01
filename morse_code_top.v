@@ -139,7 +139,7 @@ ee201_debouncer #(.N_dc(25)) ee201_debouncer_1
 	letter_sm letter_sm_1(.Start(Start), .Clk(sys_clk), .Reset(Reset), .L(DASH), .S(DOT), .T(T_en), .Tclear(Tclear_letter), .qA(qA), .qB(qB), .qC(qC), .qD(qD), .qE(qE), .qF(qF), .qG(qG), .qH(qH), .qI(qI), .qJ(qJ), .qK(qK), .qL(qL), .qM(qM), .qN(qN), .qO(qO), .qP(qP), .qQ(qQ), .qR(qR), .qS(qS), .qT(qT), .qU(qU), .qV(qV), .qW(qW), .qX(qX), .qY(qY), .qZ(qZ), .letter_code(letter_code));
 	//VGA
 	vga_demo VGA_1(.ClkPort(sys_clk), .vga_h_sync(vga_h_sync), .vga_v_sync(vga_v_sync), .vga_r(vga_r), .vga_g(vga_g), .vga_b(vga_b), .Sw0(BtnC), .Sw1(Start), .btnU(BtnU), .btnD(BtnD),
-	.St_ce_bar(St_ce_bar), .St_rp_bar(St_rp_bar), .Mt_ce_bar(Mt_ce_bar), .Mt_St_oe_bar(Mt_St_oe_bar), .Mt_St_we_bar(Mt_St_we_bar));
+	.St_ce_bar(St_ce_bar), .St_rp_bar(St_rp_bar), .Mt_ce_bar(Mt_ce_bar), .Mt_St_oe_bar(Mt_St_oe_bar), .Mt_St_we_bar(Mt_St_we_bar), .qA(qA), .qB(qB), .qC(qC), .qD(qD), .qE(qE), .qF(qF), .qG(qG), .qH(qH), .qI(qI), .qJ(qJ), .qK(qK), .qL(qL), .qM(qM), .qN(qN), .qO(qO), .qP(qP), .qQ(qQ), .qR(qR), .qS(qS), .qT(qT), .qU(qU), .qV(qV), .qW(qW), .qX(qX), .qY(qY), .qZ(qZ), .letter_code(letter_code));
 //------------
 // OUTPUT: LEDS
 	assign Ld7 = DIV_CLK[25];
@@ -217,15 +217,15 @@ ee201_debouncer #(.N_dc(25)) ee201_debouncer_1
 			26'b00000000000000100000000000: SSD_CATHODES = 8'b00000010; // O
 			26'b00000000000000010000000000: SSD_CATHODES = 8'b00110000; // P
 			26'b00000000000000001000000000: SSD_CATHODES = 8'b00011000; // Q
-			26'b00000000000000000100000000: SSD_CATHODES = 8'b00100000; // R   
+			26'b00000000000000000100000000: SSD_CATHODES = 8'b11110100; // R   
 			26'b00000000000000000010000000: SSD_CATHODES = 8'b01001000; // S
 			26'b00000000000000000001000000: SSD_CATHODES = 8'b11110000; // T
 			26'b00000000000000000000100000: SSD_CATHODES = 8'b10000010; // U
-			26'b00000000000000000000010000: SSD_CATHODES = 8'b10000011; // V
+			26'b00000000000000000000010000: SSD_CATHODES = 8'b10111000; // V
 			26'b00000000000000000000001000: SSD_CATHODES = 8'b10000000; // W
 			26'b00000000000000000000000100: SSD_CATHODES = 8'b10010010; // X
-			26'b00000000000000000000000010: SSD_CATHODES = 8'b10101000; // Y
-			26'b00000000000000000000000001: SSD_CATHODES = 8'b00100100; // Z			
+			26'b00000000000000000000000010: SSD_CATHODES = 8'b10001000; // Y
+			26'b00000000000000000000000001: SSD_CATHODES = 8'b00000100; // Z			
 			default: SSD_CATHODES = 8'bXXXXXXXX; // default is not needed as we covered all cases
 		endcase
 	end	

@@ -15,7 +15,7 @@
 
   <!--                                                          -->
 
-  <!-- Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved. -->
+  <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved. -->
 
   <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
 
@@ -29,16 +29,6 @@
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="calibration_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="dot_dash_tb_beh.prj"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="dot_dash_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="dot_dash_tb_isim_beh.wdb"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="ee201_debounce_DPB_SCEN_CCEN_MCEN_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
-    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="letter_sm_tb_isim_beh.exe"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="morse_code_top.bgn" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="morse_code_top.bit" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="morse_code_top.bld"/>
@@ -75,138 +65,44 @@
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="morse_code_top_par.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="morse_code_top_summary.html"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="morse_code_top_summary.xml"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="morse_code_top_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="morse_code_top_usage.xml"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="morse_code_top_xst.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="wait_timer_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1417399221" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1417399221">
+    <transform xil_pn:end_ts="1417401400" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1417401400">
+      <status xil_pn:value="SuccessfullyRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1417401400" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="1766164105255387719" xil_pn:start_ts="1417401400">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1417399221" xil_pn:in_ck="2396579286909175661" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1417399221">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="../Project/ee254-morse-code/calibration.v"/>
-      <outfile xil_pn:name="../Project/ee254-morse-code/dot_dash.v"/>
-      <outfile xil_pn:name="../Project/ee254-morse-code/ee201_debounce_DPB_SCEN_CCEN_MCEN.v"/>
-      <outfile xil_pn:name="../Project/ee254-morse-code/letter_sm.v"/>
-      <outfile xil_pn:name="../Project/ee254-morse-code/morse_code_top.v"/>
-      <outfile xil_pn:name="../Project/ee254-morse-code/wait_timer.v"/>
-      <outfile xil_pn:name="calibration_tb.v"/>
-      <outfile xil_pn:name="dot_dash_tb.v"/>
-      <outfile xil_pn:name="ee201_debounce_DPB_SCEN_CCEN_MCEN.v"/>
-      <outfile xil_pn:name="hvsync_generator.v"/>
-      <outfile xil_pn:name="letter_sm_tb.v"/>
-      <outfile xil_pn:name="morse_code_top_noVGA.v"/>
-      <outfile xil_pn:name="morse_code_top_tb.v"/>
-      <outfile xil_pn:name="vga_morse.v"/>
-      <outfile xil_pn:name="wait_timer_tb.v"/>
-    </transform>
-    <transform xil_pn:end_ts="1417399221" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="5371186101167045746" xil_pn:start_ts="1417399221">
+    <transform xil_pn:end_ts="1417401400" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="5089261638716859862" xil_pn:start_ts="1417401400">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1417399221" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="1069842153922656304" xil_pn:start_ts="1417399221">
+    <transform xil_pn:end_ts="1417401400" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1417401400">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1417399221" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="5089261638716859862" xil_pn:start_ts="1417399221">
+    <transform xil_pn:end_ts="1417401400" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-2893053846793626167" xil_pn:start_ts="1417401400">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1417399221" xil_pn:in_ck="2396579286909175661" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1417399221">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="../Project/ee254-morse-code/calibration.v"/>
-      <outfile xil_pn:name="../Project/ee254-morse-code/dot_dash.v"/>
-      <outfile xil_pn:name="../Project/ee254-morse-code/ee201_debounce_DPB_SCEN_CCEN_MCEN.v"/>
-      <outfile xil_pn:name="../Project/ee254-morse-code/letter_sm.v"/>
-      <outfile xil_pn:name="../Project/ee254-morse-code/morse_code_top.v"/>
-      <outfile xil_pn:name="../Project/ee254-morse-code/wait_timer.v"/>
-      <outfile xil_pn:name="calibration_tb.v"/>
-      <outfile xil_pn:name="dot_dash_tb.v"/>
-      <outfile xil_pn:name="ee201_debounce_DPB_SCEN_CCEN_MCEN.v"/>
-      <outfile xil_pn:name="hvsync_generator.v"/>
-      <outfile xil_pn:name="letter_sm_tb.v"/>
-      <outfile xil_pn:name="morse_code_top_noVGA.v"/>
-      <outfile xil_pn:name="morse_code_top_tb.v"/>
-      <outfile xil_pn:name="vga_morse.v"/>
-      <outfile xil_pn:name="wait_timer_tb.v"/>
-    </transform>
-    <transform xil_pn:end_ts="1417399224" xil_pn:in_ck="2396579286909175661" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-3682440835872598045" xil_pn:start_ts="1417399221">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="dot_dash_tb_beh.prj"/>
-      <outfile xil_pn:name="dot_dash_tb_isim_beh.exe"/>
-      <outfile xil_pn:name="fuse.log"/>
-      <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="xilinxsim.ini"/>
-    </transform>
-    <transform xil_pn:end_ts="1417399224" xil_pn:in_ck="-5285417392766922785" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="5482637472876324109" xil_pn:start_ts="1417399224">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="dot_dash_tb_isim_beh.wdb"/>
-      <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
-    </transform>
-    <transform xil_pn:end_ts="1416890377" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1416890377">
+    <transform xil_pn:end_ts="1417401400" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="1106364426758808884" xil_pn:start_ts="1417401400">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1417391470" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="1766164105255387719" xil_pn:start_ts="1417391470">
+    <transform xil_pn:end_ts="1417401400" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="2573821725827916384" xil_pn:start_ts="1417401400">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1416890377" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="5089261638716859862" xil_pn:start_ts="1416890377">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1416890377" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1416890377">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1416890377" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-2893053846793626167" xil_pn:start_ts="1416890377">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1416890377" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="1106364426758808884" xil_pn:start_ts="1416890377">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1416890377" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="2573821725827916384" xil_pn:start_ts="1416890377">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1417400097" xil_pn:in_ck="-8269886911918959856" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="4468870985603627493" xil_pn:start_ts="1417400060">
+    <transform xil_pn:end_ts="1417404446" xil_pn:in_ck="8743928325238721010" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="4468870985603627493" xil_pn:start_ts="1417404409">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -224,11 +120,11 @@
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1417399582" xil_pn:in_ck="5252585598274710" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-6929545403368106252" xil_pn:start_ts="1417399582">
+    <transform xil_pn:end_ts="1417403414" xil_pn:in_ck="5252585598274710" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-6929545403368106252" xil_pn:start_ts="1417403414">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1417400102" xil_pn:in_ck="-3050139779860002162" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="1362008606408584119" xil_pn:start_ts="1417400097">
+    <transform xil_pn:end_ts="1417404451" xil_pn:in_ck="-3050139779860002162" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="1362008606408584119" xil_pn:start_ts="1417404446">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="_ngo"/>
@@ -237,7 +133,7 @@
       <outfile xil_pn:name="morse_code_top.ngd"/>
       <outfile xil_pn:name="morse_code_top_ngdbuild.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1417400146" xil_pn:in_ck="-3048608200874737713" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1463976855095865663" xil_pn:start_ts="1417400102">
+    <transform xil_pn:end_ts="1417404485" xil_pn:in_ck="-3048608200874737713" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1463976855095865663" xil_pn:start_ts="1417404451">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -251,7 +147,7 @@
       <outfile xil_pn:name="morse_code_top_summary.xml"/>
       <outfile xil_pn:name="morse_code_top_usage.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1417400222" xil_pn:in_ck="-4100076043677796696" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1178055513630676559" xil_pn:start_ts="1417400146">
+    <transform xil_pn:end_ts="1417404683" xil_pn:in_ck="-4100076043677796696" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1178055513630676559" xil_pn:start_ts="1417404485">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -266,9 +162,8 @@
       <outfile xil_pn:name="morse_code_top_pad.txt"/>
       <outfile xil_pn:name="morse_code_top_par.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1417400270" xil_pn:in_ck="7946308941616441205" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="335873702051717080" xil_pn:start_ts="1417400222">
+    <transform xil_pn:end_ts="1417404700" xil_pn:in_ck="7946308941616441205" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="396117104113915555" xil_pn:start_ts="1417404683">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="morse_code_top.bgn"/>
@@ -279,15 +174,7 @@
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1417391269" xil_pn:in_ck="7946308941616428351" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="8482462020707587906" xil_pn:start_ts="1417391266">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputAdded"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
-    </transform>
-    <transform xil_pn:end_ts="1417400222" xil_pn:in_ck="-3250776626929644981" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1417400214">
+    <transform xil_pn:end_ts="1417404683" xil_pn:in_ck="-3250776626929644981" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1417404675">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>

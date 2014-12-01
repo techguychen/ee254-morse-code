@@ -2,7 +2,6 @@ set -tmpdir "xst/projnav.tmp"
 set -xsthdpdir "xst"
 run
 -ifn morse_code_top.prj
--ifmt mixed
 -ofn morse_code_top
 -ofmt NGC
 -p xc6slx16-3-csg324
