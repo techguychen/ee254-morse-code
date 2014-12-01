@@ -10,10 +10,10 @@ module calibration (Start, Clk, Reset, L, S, Timeout, T_count1, T_count2, T_coun
 //T timing constraint, user waits too long, goes back to INITIAL
 
 input Start, Clk, Reset, L, S;
-output reg [30:0] Timeout;
-output reg [30:0] T_count1;
-output reg [30:0] T_count2;
-output reg [30:0] T_count3;
+output reg [31:0] Timeout;
+output reg [31:0] T_count1;
+output reg [31:0] T_count2;
+output reg [31:0] T_count3;
 
 output reg [2:0] state;
 output reg [2:0] dot_cnt;

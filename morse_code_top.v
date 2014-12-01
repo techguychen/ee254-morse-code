@@ -28,14 +28,12 @@ module morse_code_top (
 		Dp                                 // Dot Point Cathode on SSDs
 	  );
 	  
-	  
 	/*  INPUTS */
 	// Clock & Reset I/O
 	input		ClkPort;	
 	// Project Specific Inputs
 	input		BtnL, BtnU, BtnD, BtnR, BtnC;	
 	input		Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0;
-	
 	
 	/*  OUTPUTS */
 	// Control signals on Memory chips 	(to disable them)
@@ -54,7 +52,7 @@ module morse_code_top (
 	wire [1:0] 	ssdscan_clk;
 	
 	wire  		SCEN_DD, MCEN_DD, DPB_DD; // from the debouncer
-	wire [30:0] Timeout_cal; //from Calibration
+	wire [31:0] Timeout_cal; //from Calibration
 	wire 		DOT, DASH; //from dot_dash
 	wire 		Tclear_letter; //from letter_sm
 	wire 		qA, qB, qC, qD, qE, qF, qG, qH, qI, qJ, qK, qL, qM, qN, qO, qP, qQ, qR, qS, qT, qU, qV, qW, qX, qY, qZ; //from letter_sm
@@ -92,9 +90,9 @@ module morse_code_top (
 
 	// BUFGP BUFGP2 (Reset, BtnC); In the case of Spartan 3E (on Nexys-2 board), we were using BUFGP to provide global routing for the reset signal. But Spartan 6 (on Nexys-3) does not allow this.
 	assign Reset = BtnC;
-	assign cal_Start = ~Sw0;
-	assign Start = Sw0;
-	assign dot_dash_Start = 1;
+	assign cal_Start = ~Sw1;
+	assign Start = ~Sw0;
+	assign dot_dash_Start = 1'b0;
 	
 //------------
 	// Our clock is too fast (100MHz) for SSD scanning
@@ -113,7 +111,6 @@ module morse_code_top (
 	// assign	sys_clk = DIV_CLK[25];
 
 	//------------         
-
 	
 	//assign Start = BtnL; assign Ack = BtnR; // This was used in the divider_simple
 	// Unlike in the divider_simple, here we use one button BtnL to represent both Start and Ack
@@ -130,8 +127,14 @@ ee201_debouncer #(.N_dc(25)) ee201_debouncer_1
 	letter_sm letter_sm_1(.Start(Start), .Clk(sys_clk), .Reset(Reset), .L(DASH), .S(DOT), .T(T_en), .Tclear(Tclear_letter), .qA(qA), .qB(qB), .qC(qC), .qD(qD), .qE(qE), .qF(qF), .qG(qG), .qH(qH), .qI(qI), .qJ(qJ), .qK(qK), .qL(qL), .qM(qM), .qN(qN), .qO(qO), .qP(qP), .qQ(qQ), .qR(qR), .qS(qS), .qT(qT), .qU(qU), .qV(qV), .qW(qW), .qX(qX), .qY(qY), .qZ(qZ), .letter_code(letter_code));
 //------------
 // OUTPUT: LEDS
-
-	assign {Ld3, Ld2, Ld1, Ld0} = {BtnL, BtnU, BtnR, BtnD}; // Reset is driven by BtnC
+	assign Ld7 = DIV_CLK[25];
+	assign Ld6 = Sw7 & Sw6 & Sw5 & Sw4 & Sw3 & Sw2 & Sw1; // Just to combine unused inputs and outputs so that we can use the UCF
+	                                          //  file with all basic I/O resources uniformly with all our designs 
+	assign Ld5 = Sw1;
+	assign Ld4 = Sw0;
+	assign Ld3 = Sw7 & Sw6 & Sw5 & Sw4 & Sw3 & Sw2 & Sw1; // Just to combine unused inputs and outputs so that we can use the UCF
+	                                          //  file with all basic I/O resources uniformly with all our designs ;
+	assign {Ld2, Ld1, Ld0} = {BtnL, DOT, DASH};
 //------------
 // SSD (Seven Segment Display)
 	// reg [3:0]	SSD;
@@ -139,7 +142,7 @@ ee201_debouncer #(.N_dc(25)) ee201_debouncer_1
 	
 	//SSDs display Xin, Yin, Quotient, and Reminder  
 	assign SSD0 = letter_code;
-	assign SSD1 = 26'b00000000000000000000000000;
+	assign SSD1 = 26'b00000000000000000000100000;
 	assign SSD2 = 26'b00000000000000000000000000;
 	assign SSD3 = 26'b00000000000000000000000000;
 
@@ -166,22 +169,16 @@ ee201_debouncer #(.N_dc(25)) ee201_debouncer_1
 	
 	assign ssdscan_clk = DIV_CLK[19:18];
 
-	
-	assign An0	= !(~(ssdscan_clk[1]) && ~(ssdscan_clk[0]));  // when ssdscan_clk = 00
-	assign An1	= !(~(ssdscan_clk[1]) &&  (ssdscan_clk[0]));  // when ssdscan_clk = 01
-	assign An2	=  !((ssdscan_clk[1]) && ~(ssdscan_clk[0]));  // when ssdscan_clk = 10
-	assign An3	=  !((ssdscan_clk[1]) &&  (ssdscan_clk[0]));  // when ssdscan_clk = 11
-	
-	
-	always @ (ssdscan_clk, SSD0, SSD1, SSD2, SSD3)
+	assign An0	= 1'b0;  //always on
+	assign An1	= 1'b1;  //always off
+	assign An2	=  1'b1; //always off
+	assign An3	=  1'b1; //always off
+
+	always @ (ssdscan_clk, SSD0)
 	begin : SSD_SCAN_OUT
-		case (ssdscan_clk) 
-				  2'b00: SSD = SSD0;
-				  2'b01: SSD = SSD1;
-				  2'b10: SSD = SSD2;
-				  2'b11: SSD = SSD3;
-		endcase 
+		SSD = SSD0;
 	end
+
 
 	// Following is Hex-to-SSD conversion
 	always @ (SSD) 

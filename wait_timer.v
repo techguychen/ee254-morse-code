@@ -11,9 +11,9 @@ module wait_timer (Start, Clk, Reset, T, Timeout, Tclear, I);
 //T timing constraint, user waits too long, goes back to INITIAL
 
 input Start, Clk, Reset, Tclear;
-input [30:0] Timeout; //if we use a Counter, this corresponds to 100MHz/2^30 => 10s
+input [31:0] Timeout; //if we use a Counter, this corresponds to 100MHz/2^30 => 10s
 output T;
-output reg [30:0] I;
+output reg [31:0] I;
 
 reg T; //active high to indicate system timed out
 reg state;
