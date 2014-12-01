@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/dot_dash_tb_isim_beh.exe" -prj "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/dot_dash_tb_beh.prj" "work.dot_dash_tb" "work.glbl" 

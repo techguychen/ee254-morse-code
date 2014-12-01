@@ -1,0 +1,13 @@
+Release 13.2 Drc O.61xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Sun Nov 30 18:17:05 2014
+
+drc -z morse_code_top.ncd morse_code_top.pcf
+
+WARNING:PhysDesignRules:367 - The signal <BtnD_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <BtnU_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+DRC detected 0 errors and 2 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

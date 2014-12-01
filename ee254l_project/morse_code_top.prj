@@ -1,0 +1,8 @@
+verilog work "hvsync_generator.v"
+verilog work "../Project/ee254-morse-code/wait_timer.v"
+verilog work "../Project/ee254-morse-code/letter_sm.v"
+verilog work "../Project/ee254-morse-code/ee201_debounce_DPB_SCEN_CCEN_MCEN.v"
+verilog work "../Project/ee254-morse-code/dot_dash.v"
+verilog work "../Project/ee254-morse-code/calibration.v"
+verilog work "vga_morse.v"
+verilog work "../Project/ee254-morse-code/morse_code_top.v"

@@ -1,0 +1,19 @@
+Running: C:\Xilinx\13.2\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/dot_dash_tb_isim_beh.exe -prj C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/dot_dash_tb_beh.prj work.dot_dash_tb work.glbl 
+ISim O.61xd (signature 0x1cce1bb2)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file \"C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/../Project/ee254-morse-code/dot_dash.v\" into library work
+Analyzing Verilog file \"C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/dot_dash_tb.v\" into library work
+Analyzing Verilog file \"C:/Xilinx/13.2/ISE_DS/ISE//verilog/src/glbl.v\" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling module dot_dash
+Compiling module dot_dash_tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 3 Verilog Units
+Built simulation executable C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/dot_dash_tb_isim_beh.exe
+Fuse Memory Usage: 21660 KB
+Fuse CPU Usage: 186 ms

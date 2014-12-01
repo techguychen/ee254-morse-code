@@ -1,0 +1,1325 @@
+Release 13.2 - xst O.61xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: morse_code_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "morse_code_top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "morse_code_top"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : morse_code_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file \"C:\Users\Kevin Su\Documents\Files\USC\EE 254L\ee254l_project\hvsync_generator.v\" into library work
+Parsing module <hvsync_generator>.
+Analyzing Verilog file \"C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\wait_timer.v\" into library work
+Parsing module <wait_timer>.
+Analyzing Verilog file \"C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\letter_sm.v\" into library work
+Parsing module <letter_sm>.
+Analyzing Verilog file \"C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\ee201_debounce_DPB_SCEN_CCEN_MCEN.v\" into library work
+Parsing module <ee201_debouncer>.
+Analyzing Verilog file \"C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\dot_dash.v\" into library work
+Parsing module <dot_dash>.
+Analyzing Verilog file \"C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\calibration.v\" into library work
+Parsing module <calibration>.
+Analyzing Verilog file \"C:\Users\Kevin Su\Documents\Files\USC\EE 254L\ee254l_project\vga_morse.v\" into library work
+Parsing module <vga_demo>.
+Analyzing Verilog file \"C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\morse_code_top.v\" into library work
+Parsing module <morse_code_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+WARNING:HDLCompiler:1016 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\morse_code_top.v" Line 141: Port btnL is not connected to this instance
+
+Elaborating module <morse_code_top>.
+
+Elaborating module <BUFGP>.
+
+Elaborating module <ee201_debouncer(N_dc=25)>.
+WARNING:HDLCompiler:413 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 137: Result of 32-bit expression is truncated to fit in 25-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 154: Result of 26-bit expression is truncated to fit in 25-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 167: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 172: Result of 26-bit expression is truncated to fit in 25-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 185: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 190: Result of 26-bit expression is truncated to fit in 25-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 222: Result of 26-bit expression is truncated to fit in 25-bit target.
+
+Elaborating module <calibration>.
+WARNING:HDLCompiler:413 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\calibration.v" Line 54: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\calibration.v" Line 67: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\calibration.v" Line 85: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\calibration.v" Line 102: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\calibration.v" Line 115: Result of 4-bit expression is truncated to fit in 3-bit target.
+
+Elaborating module <dot_dash>.
+
+Elaborating module <wait_timer>.
+
+Elaborating module <letter_sm>.
+WARNING:HDLCompiler:1127 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\morse_code_top.v" Line 139: Assignment to qA ignored, since the identifier is never used
+
+Elaborating module <vga_demo>.
+
+Elaborating module <BUF>.
+WARNING:HDLCompiler:1127 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\ee254l_project\vga_morse.v" Line 21: Assignment to start ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\ee254l_project\vga_morse.v" Line 32: Assignment to button_clk ignored, since the identifier is never used
+
+Elaborating module <hvsync_generator>.
+WARNING:HDLCompiler:413 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\ee254l_project\hvsync_generator.v" Line 34: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\ee254l_project\hvsync_generator.v" Line 44: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:1127 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\morse_code_top.v" Line 160: Assignment to SSD1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\morse_code_top.v" Line 161: Assignment to SSD2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\morse_code_top.v" Line 162: Assignment to SSD3 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\morse_code_top.v" Line 185: Assignment to ssdscan_clk ignored, since the identifier is never used
+WARNING:HDLCompiler:552 - "C:\Users\Kevin Su\Documents\Files\USC\EE 254L\Project\ee254-morse-code\morse_code_top.v" Line 141: Input port btnL is not connected on this instance
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <morse_code_top>.
+    Related source file is "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v".
+WARNING:Xst:2898 - Port 'btnL', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qA', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qB', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qC', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qD', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qE', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qF', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qG', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qH', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qI', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qJ', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qK', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qL', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qM', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qN', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qO', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qP', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qQ', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qR', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qS', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qT', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qU', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qV', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qW', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qX', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qY', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:2898 - Port 'qZ', unconnected in block instance 'VGA_1', is tied to GND.
+WARNING:Xst:647 - Input <BtnR> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 129: Output port <CCEN> of the instance <ee201_debouncer> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 133: Output port <T_count1> of the instance <calibration_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 133: Output port <T_count2> of the instance <calibration_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 133: Output port <T_count3> of the instance <calibration_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 133: Output port <state> of the instance <calibration_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 133: Output port <dot_cnt> of the instance <calibration_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 133: Output port <dash_cnt> of the instance <calibration_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 137: Output port <I> of the instance <wait_timer_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qA> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qB> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qC> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qD> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qE> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qF> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qG> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qH> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qI> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qJ> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qK> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qL> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qM> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qN> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qO> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qP> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qQ> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qR> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qS> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qT> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qU> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qV> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qW> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qX> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qY> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/morse_code_top.v" line 139: Output port <qZ> of the instance <letter_sm_1> is unconnected or connected to loadless signal.
+    Found 27-bit register for signal <DIV_CLK>.
+    Found 27-bit adder for signal <DIV_CLK[26]_GND_1_o_add_1_OUT> created at line 116.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  27 D-type flip-flop(s).
+Unit <morse_code_top> synthesized.
+
+Synthesizing Unit <ee201_debouncer>.
+    Related source file is "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/ee201_debounce_dpb_scen_ccen_mcen.v".
+        N_dc = 25
+    Set property "fsm_encoding = user" for signal <state>.
+    Found 6-bit register for signal <state>.
+    Found 25-bit register for signal <debounce_count>.
+    Found 4-bit register for signal <MCEN_count>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 20                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 13                                             |
+    | Clock              | CLK (rising_edge)                              |
+    | Reset              | RESET (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000000                                         |
+    | Encoding           | user                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 25-bit adder for signal <debounce_count[24]_GND_3_o_add_2_OUT> created at line 154.
+    Found 4-bit adder for signal <MCEN_count[3]_GND_3_o_add_5_OUT> created at line 167.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  29 D-type flip-flop(s).
+	inferred   1 Finite State Machine(s).
+Unit <ee201_debouncer> synthesized.
+
+Synthesizing Unit <calibration>.
+    Related source file is "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/calibration.v".
+    Found 3-bit register for signal <dot_cnt>.
+    Found 3-bit register for signal <dash_cnt>.
+    Found 3-bit register for signal <state>.
+    Found 32-bit register for signal <T_count1>.
+    Found 32-bit register for signal <T_count2>.
+    Found 32-bit register for signal <T_count3>.
+    Found 32-bit register for signal <Timeout>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 19                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 3                                              |
+    | Clock              | Clk (rising_edge)                              |
+    | Reset              | Reset (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit adder for signal <T_count1[31]_GND_4_o_add_7_OUT> created at line 71.
+    Found 32-bit adder for signal <T_count2[31]_GND_4_o_add_18_OUT> created at line 89.
+    Found 3-bit adder for signal <dot_cnt[2]_GND_4_o_add_27_OUT> created at line 102.
+    Found 32-bit adder for signal <T_count3[31]_GND_4_o_add_29_OUT> created at line 105.
+    Found 3-bit adder for signal <dash_cnt[2]_GND_4_o_add_37_OUT> created at line 115.
+    Found 32-bit adder for signal <n0129> created at line 119.
+    Found 32-bit adder for signal <T_count1[31]_T_count3[31]_add_42_OUT> created at line 119.
+    Summary:
+	inferred   7 Adder/Subtractor(s).
+	inferred 134 D-type flip-flop(s).
+	inferred  10 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <calibration> synthesized.
+
+Synthesizing Unit <div_32u_2u>.
+    Related source file is "".
+    Found 34-bit adder for signal <GND_5_o_b[1]_add_1_OUT> created at line 0.
+    Found 33-bit adder for signal <GND_5_o_b[1]_add_3_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_b[1]_add_5_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_7_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_9_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_11_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_13_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_15_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_17_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_19_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_21_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_23_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_25_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_27_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_29_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_31_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_33_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_35_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_37_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_39_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_41_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_43_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_45_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_47_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_49_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_51_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_53_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_55_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_57_OUT> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_59_OUT[31:0]> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_61_OUT[31:0]> created at line 0.
+    Found 32-bit adder for signal <a[31]_GND_5_o_add_63_OUT[31:0]> created at line 0.
+    Found 34-bit comparator lessequal for signal <BUS_0001> created at line 0
+    Found 33-bit comparator lessequal for signal <BUS_0002> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0003> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0004> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0005> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0006> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0007> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0008> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0009> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0010> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0011> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0012> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0013> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0014> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0015> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0016> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0017> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0018> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0019> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0020> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0021> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0022> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0023> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0024> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0025> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0026> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0027> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0028> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0029> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0030> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0031> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0032> created at line 0
+    Found 32-bit comparator lessequal for signal <BUS_0033> created at line 0
+    Summary:
+	inferred  32 Adder/Subtractor(s).
+	inferred  33 Comparator(s).
+	inferred 931 Multiplexer(s).
+Unit <div_32u_2u> synthesized.
+
+Synthesizing Unit <dot_dash>.
+    Related source file is "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/dot_dash.v".
+    Found 1-bit register for signal <state>.
+    Found 1-bit register for signal <S>.
+    Found 1-bit register for signal <L>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <dot_dash> synthesized.
+
+Synthesizing Unit <wait_timer>.
+    Related source file is "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/wait_timer.v".
+    Found 1-bit register for signal <state>.
+    Found 1-bit register for signal <T>.
+    Found 32-bit register for signal <I>.
+    Found 32-bit adder for signal <I[31]_GND_7_o_add_4_OUT> created at line 56.
+    Found 32-bit comparator equal for signal <I[31]_Timeout[31]_equal_4_o> created at line 52
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  34 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <wait_timer> synthesized.
+
+Synthesizing Unit <letter_sm>.
+    Related source file is "c:/users/kevin su/documents/files/usc/ee 254l/project/ee254-morse-code/letter_sm.v".
+    Found 26-bit register for signal <letter_code>.
+    Found 26-bit register for signal <state>.
+    Found 1-bit register for signal <Tclear>.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 27                                             |
+    | Transitions        | 93                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 53                                             |
+    | Clock              | Clk (rising_edge)                              |
+    | Reset              | Reset (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00000000000000000000000000                     |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred  27 D-type flip-flop(s).
+	inferred   7 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <letter_sm> synthesized.
+
+Synthesizing Unit <vga_demo>.
+    Related source file is "c:/users/kevin su/documents/files/usc/ee 254l/ee254l_project/vga_morse.v".
+WARNING:Xst:647 - Input <btnU> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <btnD> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <btnL> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Register <vga_r> equivalent to <vga_g> has been removed
+    Found 28-bit register for signal <DIV_CLK>.
+    Found 10-bit register for signal <tone1XStart>.
+    Found 10-bit register for signal <tone1XEnd>.
+    Found 10-bit register for signal <tone2XStart>.
+    Found 10-bit register for signal <tone2XEnd>.
+    Found 10-bit register for signal <tone3XStart>.
+    Found 10-bit register for signal <tone3XEnd>.
+    Found 10-bit register for signal <tone4XStart>.
+    Found 10-bit register for signal <tone4XEnd>.
+    Found 1-bit register for signal <vga_g>.
+    Found 1-bit register for signal <vga_b>.
+    Found 28-bit adder for signal <DIV_CLK[27]_GND_9_o_add_0_OUT> created at line 29.
+    Found 10-bit comparator lessequal for signal <n0231> created at line 375
+    Found 10-bit comparator lessequal for signal <n0233> created at line 375
+    Found 10-bit comparator lessequal for signal <n0236> created at line 375
+    Found 10-bit comparator lessequal for signal <n0239> created at line 375
+    Found 10-bit comparator lessequal for signal <n0242> created at line 376
+    Found 10-bit comparator lessequal for signal <n0245> created at line 376
+    Found 10-bit comparator lessequal for signal <n0248> created at line 377
+    Found 10-bit comparator lessequal for signal <n0251> created at line 377
+    Found 10-bit comparator lessequal for signal <n0254> created at line 378
+    Found 10-bit comparator lessequal for signal <n0257> created at line 378
+    Found 10-bit comparator lessequal for signal <n0263> created at line 381
+    Found 10-bit comparator lessequal for signal <n0265> created at line 381
+    Found 10-bit comparator lessequal for signal <n0268> created at line 381
+    Found 10-bit comparator lessequal for signal <n0271> created at line 381
+    Found 10-bit comparator lessequal for signal <n0274> created at line 382
+    Found 10-bit comparator lessequal for signal <n0277> created at line 382
+    Found 10-bit comparator lessequal for signal <n0280> created at line 383
+    Found 10-bit comparator lessequal for signal <n0283> created at line 383
+    Found 10-bit comparator lessequal for signal <n0286> created at line 384
+    Found 10-bit comparator lessequal for signal <n0289> created at line 384
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred 110 D-type flip-flop(s).
+	inferred  20 Comparator(s).
+Unit <vga_demo> synthesized.
+
+Synthesizing Unit <hvsync_generator>.
+    Related source file is "c:/users/kevin su/documents/files/usc/ee 254l/ee254l_project/hvsync_generator.v".
+    Found 10-bit register for signal <CounterY>.
+    Found 1-bit register for signal <vga_HS>.
+    Found 1-bit register for signal <vga_VS>.
+    Found 1-bit register for signal <inDisplayArea>.
+    Found 10-bit register for signal <CounterX>.
+    Found 10-bit adder for signal <CounterX[9]_GND_11_o_add_2_OUT> created at line 34.
+    Found 10-bit adder for signal <CounterY[9]_GND_11_o_add_9_OUT> created at line 44.
+    Found 10-bit comparator greater for signal <PWR_11_o_CounterX[9]_LessThan_16_o> created at line 49
+    Found 10-bit comparator greater for signal <CounterX[9]_PWR_11_o_LessThan_17_o> created at line 49
+    Found 10-bit comparator greater for signal <CounterX[9]_PWR_11_o_LessThan_21_o> created at line 58
+    Found 10-bit comparator greater for signal <CounterY[9]_GND_11_o_LessThan_22_o> created at line 58
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  23 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+Unit <hvsync_generator> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 46
+ 10-bit adder                                          : 2
+ 25-bit adder                                          : 1
+ 27-bit adder                                          : 1
+ 28-bit adder                                          : 1
+ 3-bit adder                                           : 2
+ 32-bit adder                                          : 36
+ 33-bit adder                                          : 1
+ 34-bit adder                                          : 1
+ 4-bit adder                                           : 1
+# Registers                                            : 33
+ 1-bit register                                        : 11
+ 10-bit register                                       : 10
+ 25-bit register                                       : 1
+ 26-bit register                                       : 1
+ 27-bit register                                       : 1
+ 28-bit register                                       : 1
+ 3-bit register                                        : 2
+ 32-bit register                                       : 5
+ 4-bit register                                        : 1
+# Comparators                                          : 58
+ 10-bit comparator greater                             : 4
+ 10-bit comparator lessequal                           : 20
+ 32-bit comparator equal                               : 1
+ 32-bit comparator lessequal                           : 31
+ 33-bit comparator lessequal                           : 1
+ 34-bit comparator lessequal                           : 1
+# Multiplexers                                         : 948
+ 1-bit 2-to-1 multiplexer                              : 934
+ 26-bit 2-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 10
+ 32-bit 2-to-1 multiplexer                             : 3
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_9> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_8> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_7> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_6> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_5> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_4> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_3> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_2> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_1> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_0> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_9> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_8> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_7> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_6> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_5> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_4> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_3> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_2> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_1> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_0> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_9> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_8> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_7> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_6> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_5> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_4> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_3> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_2> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_1> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_0> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_9> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_8> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_7> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_6> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_5> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_4> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_3> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_2> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_1> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_0> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_9> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_8> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_7> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_6> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_5> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_4> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_3> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_2> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_1> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_0> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_9> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_8> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_7> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_6> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_5> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_4> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_3> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_2> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_1> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_0> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_9> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_8> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_7> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_6> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_5> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_4> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_3> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_2> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_1> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_0> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_9> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_8> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_7> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_6> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_5> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_4> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_3> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_2> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_1> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_0> (without init value) has a constant value of 0 in block <VGA_1>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <calibration>.
+The following registers are absorbed into counter <T_count1>: 1 register on signal <T_count1>.
+The following registers are absorbed into counter <T_count2>: 1 register on signal <T_count2>.
+The following registers are absorbed into counter <T_count3>: 1 register on signal <T_count3>.
+Unit <calibration> synthesized (advanced).
+
+Synthesizing (advanced) Unit <hvsync_generator>.
+The following registers are absorbed into counter <CounterX>: 1 register on signal <CounterX>.
+The following registers are absorbed into counter <CounterY>: 1 register on signal <CounterY>.
+Unit <hvsync_generator> synthesized (advanced).
+
+Synthesizing (advanced) Unit <morse_code_top>.
+The following registers are absorbed into counter <DIV_CLK>: 1 register on signal <DIV_CLK>.
+Unit <morse_code_top> synthesized (advanced).
+
+Synthesizing (advanced) Unit <vga_demo>.
+The following registers are absorbed into counter <DIV_CLK>: 1 register on signal <DIV_CLK>.
+Unit <vga_demo> synthesized (advanced).
+
+Synthesizing (advanced) Unit <wait_timer>.
+The following registers are absorbed into counter <I>: 1 register on signal <I>.
+Unit <wait_timer> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 38
+ 25-bit adder                                          : 1
+ 3-bit adder                                           : 2
+ 32-bit adder                                          : 34
+ 4-bit adder                                           : 1
+# Counters                                             : 8
+ 10-bit up counter                                     : 2
+ 27-bit up counter                                     : 1
+ 28-bit up counter                                     : 1
+ 32-bit up counter                                     : 4
+# Registers                                            : 184
+ Flip-Flops                                            : 184
+# Comparators                                          : 58
+ 10-bit comparator greater                             : 4
+ 10-bit comparator lessequal                           : 20
+ 32-bit comparator equal                               : 1
+ 32-bit comparator lessequal                           : 31
+ 33-bit comparator lessequal                           : 1
+ 34-bit comparator lessequal                           : 1
+# Multiplexers                                         : 948
+ 1-bit 2-to-1 multiplexer                              : 934
+ 26-bit 2-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 10
+ 32-bit 2-to-1 multiplexer                             : 3
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_8> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_7> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_6> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_5> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_4> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_3> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_2> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_1> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XEnd_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_8> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_7> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_6> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_5> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_4> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_3> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_2> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_1> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XStart_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_8> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_7> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_6> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_5> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_4> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_3> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_2> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_1> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone4XStart_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_8> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_7> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_6> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_5> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_4> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_3> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_2> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_1> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone3XEnd_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_8> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_7> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_6> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_5> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_4> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_3> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_2> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_1> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XEnd_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_8> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_7> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_6> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_5> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_4> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_3> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_2> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_1> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone1XStart_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_8> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_7> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_6> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_5> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_4> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_3> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_2> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_1> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XEnd_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_9> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_8> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_7> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_6> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_5> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_4> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_3> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_2> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_1> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tone2XStart_0> (without init value) has a constant value of 0 in block <vga_demo>. This FF/Latch will be trimmed during the optimization process.
+Optimizing FSM <ee201_debouncer_1/FSM_0> on signal <state[1:6]> with user encoding.
+--------------------
+ State  | Encoding
+--------------------
+ 000000 | 000000
+ 000001 | 000001
+ 111100 | 111100
+ 100000 | 100000
+ 101100 | 101100
+ 100100 | 100100
+ 101101 | 101101
+ 100001 | 100001
+ 100010 | 100010
+--------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <calibration_1/FSM_1> on signal <state[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 010
+ 011   | 011
+ 100   | 100
+ 101   | 101
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <letter_sm_1/FSM_2> on signal <state[1:27]> with one-hot encoding.
+-----------------------------------------------------------
+ State                      | Encoding
+-----------------------------------------------------------
+ 00000000000000000000000000 | 000000000000000000000000001
+ 10000000000000000000000000 | 000000000000000000000000010
+ 01000000000000000000000000 | 000000000000000000000000100
+ 00100000000000000000000000 | 000000000000000000000001000
+ 00010000000000000000000000 | 000000000000000000000010000
+ 00001000000000000000000000 | 000000000000000000000100000
+ 00000100000000000000000000 | 000000000000000000001000000
+ 00000010000000000000000000 | 000000000000000000010000000
+ 00000001000000000000000000 | 000000000000000000100000000
+ 00000000100000000000000000 | 000000000000000001000000000
+ 00000000010000000000000000 | 000000000000000010000000000
+ 00000000001000000000000000 | 000000000000000100000000000
+ 00000000000100000000000000 | 000000000000001000000000000
+ 00000000000010000000000000 | 000000000000010000000000000
+ 00000000000001000000000000 | 000000000000100000000000000
+ 00000000000000100000000000 | 000000000001000000000000000
+ 00000000000000010000000000 | 000000000010000000000000000
+ 00000000000000001000000000 | 000000000100000000000000000
+ 00000000000000000100000000 | 000000001000000000000000000
+ 00000000000000000010000000 | 000000010000000000000000000
+ 00000000000000000001000000 | 000000100000000000000000000
+ 00000000000000000000100000 | 000001000000000000000000000
+ 00000000000000000000010000 | 000010000000000000000000000
+ 00000000000000000000001000 | 000100000000000000000000000
+ 00000000000000000000000100 | 001000000000000000000000000
+ 00000000000000000000000010 | 010000000000000000000000000
+ 00000000000000000000000001 | 100000000000000000000000000
+-----------------------------------------------------------
+WARNING:Xst:2677 - Node <DIV_CLK_2> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_3> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_4> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_5> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_6> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_7> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_8> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_9> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_10> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_11> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_12> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_13> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_14> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_15> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_16> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_17> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_18> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_19> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_20> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_21> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_22> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_23> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_24> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_25> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_26> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:2677 - Node <DIV_CLK_27> of sequential type is unconnected in block <vga_demo>.
+WARNING:Xst:1710 - FF/Latch <Timeout_31> (without init value) has a constant value of 0 in block <calibration>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <DIV_CLK_26> of sequential type is unconnected in block <morse_code_top>.
+
+Optimizing unit <morse_code_top> ...
+
+Optimizing unit <ee201_debouncer> ...
+
+Optimizing unit <vga_demo> ...
+
+Optimizing unit <hvsync_generator> ...
+
+Optimizing unit <calibration> ...
+
+Optimizing unit <dot_dash> ...
+
+Optimizing unit <wait_timer> ...
+
+Optimizing unit <letter_sm> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block morse_code_top, actual ratio is 20.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 315
+ Flip-Flops                                            : 315
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : morse_code_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 3716
+#      BUF                         : 3
+#      GND                         : 1
+#      INV                         : 35
+#      LUT1                        : 192
+#      LUT2                        : 28
+#      LUT3                        : 267
+#      LUT4                        : 126
+#      LUT5                        : 749
+#      LUT6                        : 899
+#      MUXCY                       : 713
+#      MUXF7                       : 39
+#      VCC                         : 1
+#      XORCY                       : 663
+# FlipFlops/Latches                : 315
+#      FD                          : 30
+#      FDC                         : 63
+#      FDCE                        : 161
+#      FDE                         : 1
+#      FDP                         : 1
+#      FDR                         : 16
+#      FDRE                        : 43
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 45
+#      IBUF                        : 10
+#      OBUF                        : 35
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             315  out of  18224     1%  
+ Number of Slice LUTs:                 2296  out of   9112    25%  
+    Number used as Logic:              2296  out of   9112    25%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   2406
+   Number with an unused Flip Flop:    2091  out of   2406    86%  
+   Number with an unused LUT:           110  out of   2406     4%  
+   Number of fully used LUT-FF pairs:   205  out of   2406     8%  
+   Number of unique control sets:        23
+
+IO Utilization: 
+ Number of IOs:                          49
+ Number of bonded IOBs:                  46  out of    232    19%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+ClkPort                            | BUFGP                  | 290   |
+VGA_1/DIV_CLK_1                    | BUFG                   | 25    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 78.068ns (Maximum Frequency: 12.809MHz)
+   Minimum input arrival time before clock: 6.418ns
+   Maximum output required time after clock: 8.379ns
+   Maximum combinational path delay: 6.333ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ClkPort'
+  Clock period: 78.068ns (frequency: 12.809MHz)
+  Total number of paths / destination ports: 70189476821935450000000000000000000000000 / 492
+-------------------------------------------------------------------------
+Delay:               78.068ns (Levels of Logic = 151)
+  Source:            calibration_1/T_count1_0 (FF)
+  Destination:       calibration_1/Timeout_0 (FF)
+  Source Clock:      ClkPort rising
+  Destination Clock: ClkPort rising
+
+  Data Path: calibration_1/T_count1_0 to calibration_1/Timeout_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.447   0.879  calibration_1/T_count1_0 (calibration_1/T_count1_0)
+     LUT3:I0->O            1   0.205   0.580  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT)
+     LUT4:I3->O            1   0.205   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_lut<0>1 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_lut<0>1)
+     MUXCY:S->O            1   0.172   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_0 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>1)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_1 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>2)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_2 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>3)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_3 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>4)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_4 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>5)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_5 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>6)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_6 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>7)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_7 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>8)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_8 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>9)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_9 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>10)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_10 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>11)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_11 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>12)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_12 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>13)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_13 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>14)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_14 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>15)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_15 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>16)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_16 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>17)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_17 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>18)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_18 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>19)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_19 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>20)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_20 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>21)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_21 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>22)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_22 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>23)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_23 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>24)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_24 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>25)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>_25 (calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_cy<0>26)
+     XORCY:CI->O          47   0.180   1.849  calibration_1/Madd_T_count1[31]_T_count3[31]_add_42_OUT_xor<0>_26 (calibration_1/T_count1[31]_PWR_4_o_div_43/Madd_a[31]_GND_5_o_add_11_OUT_cy<27>)
+     LUT5:I0->O            1   0.203   0.808  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_431_o12411_SW0_SW0_SW0 (N1371)
+     LUT6:I3->O            1   0.205   0.684  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_431_o12411_SW0_SW0 (N575)
+     LUT4:I2->O            3   0.203   0.651  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_431_o12411_SW01 (N147)
+     LUT6:I5->O            1   0.205   0.580  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_431_o12411_1 (calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_431_o12411)
+     LUT6:I5->O           17   0.205   1.028  calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<23>1_SW0 (N18)
+     LUT6:I5->O           17   0.205   1.027  calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<23>1 (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<23>)
+     MUXF7:S->O           26   0.148   1.207  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_463_o1181 (calibration_1/T_count1[31]_PWR_4_o_div_43/a[26]_a[31]_MUX_437_o)
+     LUT6:I5->O           12   0.205   0.909  calibration_1/T_count1[31]_PWR_4_o_div_43/Madd_a[31]_GND_5_o_add_21_OUT_cy<26>11 (calibration_1/T_count1[31]_PWR_4_o_div_43/Madd_a[31]_GND_5_o_add_21_OUT_cy<26>)
+     LUT6:I5->O            1   0.205   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<22>16_SW30_F (N2613)
+     MUXF7:I0->O           4   0.131   0.684  calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<22>16_SW30 (N2360)
+     LUT6:I5->O            5   0.205   0.819  calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<21>11_3 (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<21>112)
+     LUT6:I4->O            6   0.203   0.973  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_527_o1171 (calibration_1/T_count1[31]_PWR_4_o_div_43/a[25]_a[31]_MUX_502_o)
+     LUT6:I3->O           11   0.205   0.883  calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<20>11_2 (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<20>112)
+     LUT6:I5->O            3   0.205   0.879  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_559_o1151_1 (calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_559_o1151)
+     LUT6:I3->O           14   0.205   0.958  calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<19>22_SW10 (N2206)
+     LUT6:I5->O            8   0.205   1.031  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_591_o1191 (calibration_1/T_count1[31]_PWR_4_o_div_43/a[27]_a[31]_MUX_564_o)
+     LUT6:I3->O            6   0.205   0.745  calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<18>21_1 (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<18>211)
+     LUT6:I5->O            8   0.205   1.147  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_623_o1191 (calibration_1/T_count1[31]_PWR_4_o_div_43/a[27]_a[31]_MUX_596_o)
+     LUT5:I0->O            4   0.203   0.788  calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<17>21_1 (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<17>211)
+     LUT6:I4->O            5   0.203   0.714  calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<17>23_1 (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<17>23)
+     MUXF7:S->O           10   0.148   0.857  calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<16>21_1 (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<16>211)
+     LUT6:I5->O           17   0.205   1.028  calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<16>23_2 (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<16>231)
+     LUT6:I5->O           10   0.205   1.085  calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<15>22_1 (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<15>221)
+     LUT6:I3->O           10   0.205   1.221  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_719_o1161 (calibration_1/T_count1[31]_PWR_4_o_div_43/a[24]_a[31]_MUX_695_o)
+     LUT6:I0->O            6   0.203   0.745  calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<14>22_4 (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<14>224)
+     LUT6:I5->O            1   0.205   0.580  calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<13>34_SW1_SW3_SW0 (N1996)
+     LUT6:I5->O            1   0.205   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<13>34_SW1_F (N2635)
+     MUXF7:I0->O           4   0.131   0.684  calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<13>34_SW1 (N526)
+     LUT6:I5->O           19   0.205   1.072  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_783_o141_1 (calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_783_o1411)
+     LUT5:I4->O            2   0.205   0.721  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_815_o171_SW2_SW0 (N797)
+     LUT6:I4->O            6   0.203   1.089  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_815_o171 (calibration_1/T_count1[31]_PWR_4_o_div_43/a[16]_a[31]_MUX_799_o)
+     LUT5:I0->O            1   0.203   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<11>_lut<1> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<11>_lut<1>)
+     MUXCY:S->O            1   0.172   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<11>_cy<1> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<11>_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<11>_cy<2> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<11>_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<11>_cy<3> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<11>_cy<3>)
+     MUXCY:CI->O          85   0.258   1.779  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<11>_cy<4> (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<11>)
+     LUT3:I2->O            4   0.205   1.028  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_847_o131 (calibration_1/T_count1[31]_PWR_4_o_div_43/a[12]_a[31]_MUX_835_o)
+     LUT5:I0->O            1   0.203   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<10>_lut<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<10>_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<10>_cy<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<10>_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<10>_cy<1> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<10>_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<10>_cy<2> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<10>_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<10>_cy<3> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<10>_cy<3>)
+     MUXCY:CI->O          89   0.258   1.805  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<10>_cy<4> (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<10>)
+     LUT5:I4->O            3   0.205   0.995  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_879_o122 (calibration_1/T_count1[31]_PWR_4_o_div_43/a[11]_a[31]_MUX_868_o)
+     LUT5:I0->O            1   0.203   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<9>_lut<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<9>_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<9>_cy<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<9>_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<9>_cy<1> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<9>_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<9>_cy<2> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<9>_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<9>_cy<3> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<9>_cy<3>)
+     MUXCY:CI->O          71   0.258   1.687  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<9>_cy<4> (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<9>)
+     LUT5:I4->O            5   0.205   1.059  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_911_o111 (calibration_1/T_count1[31]_PWR_4_o_div_43/a[10]_a[31]_MUX_901_o)
+     LUT5:I0->O            1   0.203   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<8>_lut<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<8>_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<8>_cy<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<8>_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<8>_cy<1> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<8>_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<8>_cy<2> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<8>_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<8>_cy<3> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<8>_cy<3>)
+     MUXCY:CI->O          98   0.258   1.865  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<8>_cy<4> (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<8>)
+     LUT5:I4->O            3   0.205   0.995  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_943_o1311 (calibration_1/T_count1[31]_PWR_4_o_div_43/a[9]_a[31]_MUX_934_o)
+     LUT5:I0->O            1   0.203   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<7>_lut<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<7>_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<7>_cy<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<7>_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<7>_cy<1> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<7>_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<7>_cy<2> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<7>_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<7>_cy<3> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<7>_cy<3>)
+     MUXCY:CI->O          78   0.258   1.733  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<7>_cy<4> (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<7>)
+     LUT5:I4->O            5   0.205   1.059  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_975_o1301 (calibration_1/T_count1[31]_PWR_4_o_div_43/a[8]_a[31]_MUX_967_o)
+     LUT5:I0->O            1   0.203   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<6>_lut<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<6>_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<6>_cy<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<6>_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<6>_cy<1> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<6>_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<6>_cy<2> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<6>_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<6>_cy<3> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<6>_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<6>_cy<4> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<6>_cy<4>)
+     MUXCY:CI->O         105   0.258   1.891  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<6>_cy<5> (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<6>)
+     LUT5:I4->O            3   0.205   0.995  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_1007_o1291 (calibration_1/T_count1[31]_PWR_4_o_div_43/a[7]_a[31]_MUX_1000_o)
+     LUT5:I0->O            1   0.203   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<5>_lut<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<5>_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<5>_cy<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<5>_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<5>_cy<1> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<5>_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<5>_cy<2> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<5>_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<5>_cy<3> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<5>_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<5>_cy<4> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<5>_cy<4>)
+     MUXCY:CI->O          83   0.258   1.766  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<5>_cy<5> (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<5>)
+     LUT5:I4->O            5   0.205   1.059  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_1039_o1281 (calibration_1/T_count1[31]_PWR_4_o_div_43/a[6]_a[31]_MUX_1033_o)
+     LUT5:I0->O            1   0.203   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<4>_lut<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<4>_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<4>_cy<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<4>_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<4>_cy<1> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<4>_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<4>_cy<2> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<4>_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<4>_cy<3> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<4>_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<4>_cy<4> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<4>_cy<4>)
+     MUXCY:CI->O         113   0.258   1.912  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<4>_cy<5> (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<4>)
+     LUT5:I4->O            4   0.205   1.028  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_a[0]_a[31]_MUX_1071_o1271 (calibration_1/T_count1[31]_PWR_4_o_div_43/a[5]_a[31]_MUX_1066_o)
+     LUT5:I0->O            1   0.203   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<3>_lut<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<3>_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<3>_cy<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<3>_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<3>_cy<1> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<3>_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<3>_cy<2> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<3>_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<3>_cy<3> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<3>_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<3>_cy<4> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<3>_cy<4>)
+     MUXCY:CI->O         118   0.258   1.925  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<3>_cy<5> (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<3>)
+     LUT5:I4->O            3   0.205   0.995  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_n2505271 (calibration_1/T_count1[31]_PWR_4_o_div_43/n2505<4>)
+     LUT5:I0->O            1   0.203   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<2>_lut<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<2>_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<2>_cy<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<2>_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<2>_cy<1> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<2>_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<2>_cy<2> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<2>_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<2>_cy<3> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<2>_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<2>_cy<4> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<2>_cy<4>)
+     MUXCY:CI->O          92   0.258   1.825  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<2>_cy<5> (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<2>)
+     LUT5:I4->O            2   0.205   0.961  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_n2509261 (calibration_1/T_count1[31]_PWR_4_o_div_43/n2509<3>)
+     LUT5:I0->O            1   0.203   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<1>_lut<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<1>_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<1>_cy<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<1>_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<1>_cy<1> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<1>_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<1>_cy<2> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<1>_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<1>_cy<3> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<1>_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<1>_cy<4> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<1>_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<1>_cy<5> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<1>_cy<5>)
+     MUXCY:CI->O          32   0.258   1.292  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<1>_cy<6> (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<1>)
+     LUT5:I4->O            2   0.205   0.961  calibration_1/T_count1[31]_PWR_4_o_div_43/Mmux_n2380231 (calibration_1/T_count1[31]_PWR_4_o_div_43/n2380<2>)
+     LUT5:I0->O            1   0.203   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<0>_lut<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<0>_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<0>_cy<0> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<0>_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<0>_cy<1> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<0>_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<0>_cy<2> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<0>_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<0>_cy<3> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<0>_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<0>_cy<4> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<0>_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<0>_cy<5> (calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<0>_cy<5>)
+     MUXCY:CI->O           1   0.258   0.000  calibration_1/T_count1[31]_PWR_4_o_div_43/Mcompar_o<0>_cy<6> (calibration_1/T_count1[31]_PWR_4_o_div_43_OUT<0>)
+     FDCE:D                    0.102          calibration_1/Timeout_0
+    ----------------------------------------
+    Total                     78.068ns (18.552ns logic, 59.516ns route)
+                                       (23.8% logic, 76.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'VGA_1/DIV_CLK_1'
+  Clock period: 4.927ns (frequency: 202.974MHz)
+  Total number of paths / destination ports: 507 / 59
+-------------------------------------------------------------------------
+Delay:               4.927ns (Levels of Logic = 3)
+  Source:            VGA_1/syncgen/CounterX_3 (FF)
+  Destination:       VGA_1/syncgen/CounterX_0 (FF)
+  Source Clock:      VGA_1/DIV_CLK_1 rising
+  Destination Clock: VGA_1/DIV_CLK_1 rising
+
+  Data Path: VGA_1/syncgen/CounterX_3 to VGA_1/syncgen/CounterX_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              7   0.447   1.118  VGA_1/syncgen/CounterX_3 (VGA_1/syncgen/CounterX_3)
+     LUT5:I0->O            1   0.203   0.580  VGA_1/syncgen/CounterX[9]_PWR_11_o_equal_2_o<9>_SW0 (N12)
+     LUT6:I5->O           11   0.205   0.883  VGA_1/syncgen/CounterX[9]_PWR_11_o_equal_2_o<9> (VGA_1/syncgen/CounterX[9]_PWR_11_o_equal_2_o)
+     LUT2:I1->O           10   0.205   0.856  VGA_1/syncgen/Mcount_CounterX_val1 (VGA_1/syncgen/Mcount_CounterX_val)
+     FDR:R                     0.430          VGA_1/syncgen/CounterX_0
+    ----------------------------------------
+    Total                      4.927ns (1.490ns logic, 3.437ns route)
+                                       (30.2% logic, 69.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ClkPort'
+  Total number of paths / destination ports: 569 / 492
+-------------------------------------------------------------------------
+Offset:              5.224ns (Levels of Logic = 2)
+  Source:            BtnC (PAD)
+  Destination:       wait_timer_1/I_31 (FF)
+  Destination Clock: ClkPort rising
+
+  Data Path: BtnC to wait_timer_1/I_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           230   1.222   2.061  BtnC_IBUF (BtnC_IBUF)
+     LUT3:I2->O           33   0.205   1.305  wait_timer_1/_n00351 (wait_timer_1/_n0035)
+     FDRE:R                    0.430          wait_timer_1/T
+    ----------------------------------------
+    Total                      5.224ns (1.857ns logic, 3.367ns route)
+                                       (35.5% logic, 64.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'VGA_1/DIV_CLK_1'
+  Total number of paths / destination ports: 21 / 21
+-------------------------------------------------------------------------
+Offset:              6.418ns (Levels of Logic = 3)
+  Source:            BtnC (PAD)
+  Destination:       VGA_1/syncgen/CounterY_0 (FF)
+  Destination Clock: VGA_1/DIV_CLK_1 rising
+
+  Data Path: BtnC to VGA_1/syncgen/CounterY_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           230   1.222   2.060  BtnC_IBUF (BtnC_IBUF)
+     BUF:I->O              5   0.568   1.079  VGA_1/BUF2 (VGA_1/reset)
+     LUT6:I0->O           10   0.203   0.856  VGA_1/syncgen/Mcount_CounterY_val (VGA_1/syncgen/Mcount_CounterY_val)
+     FDRE:R                    0.430          VGA_1/syncgen/CounterY_0
+    ----------------------------------------
+    Total                      6.418ns (2.423ns logic, 3.995ns route)
+                                       (37.8% logic, 62.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'ClkPort'
+  Total number of paths / destination ports: 269 / 11
+-------------------------------------------------------------------------
+Offset:              8.379ns (Levels of Logic = 5)
+  Source:            letter_sm_1/letter_code_14 (FF)
+  Destination:       Ce (PAD)
+  Source Clock:      ClkPort rising
+
+  Data Path: letter_sm_1/letter_code_14 to Ce
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             8   0.447   1.031  letter_sm_1/letter_code_14 (letter_sm_1/letter_code_14)
+     LUT3:I0->O            3   0.205   1.015  SSD_CATHODES<7>231 (SSD_CATHODES<7>23)
+     LUT6:I0->O            2   0.203   0.961  SSD_CATHODES<8>1 (SSD_CATHODES<8>1)
+     LUT6:I1->O            2   0.203   0.961  SSD_CATHODES<5>21 (SSD_CATHODES<5>2)
+     LUT6:I1->O            1   0.203   0.579  SSD_CATHODES<5>1 (Ce_OBUF)
+     OBUF:I->O                 2.571          Ce_OBUF (Ce)
+    ----------------------------------------
+    Total                      8.379ns (3.832ns logic, 4.547ns route)
+                                       (45.7% logic, 54.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'VGA_1/DIV_CLK_1'
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Offset:              4.382ns (Levels of Logic = 2)
+  Source:            VGA_1/syncgen/vga_HS (FF)
+  Destination:       vga_h_sync (PAD)
+  Source Clock:      VGA_1/DIV_CLK_1 rising
+
+  Data Path: VGA_1/syncgen/vga_HS to vga_h_sync
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.447   0.579  VGA_1/syncgen/vga_HS (VGA_1/syncgen/vga_HS)
+     INV:I->O              1   0.206   0.579  VGA_1/syncgen/vga_h_sync1_INV_0 (vga_h_sync_OBUF)
+     OBUF:I->O                 2.571          vga_h_sync_OBUF (vga_h_sync)
+    ----------------------------------------
+    Total                      4.382ns (3.224ns logic, 1.158ns route)
+                                       (73.6% logic, 26.4% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 17 / 5
+-------------------------------------------------------------------------
+Delay:               6.333ns (Levels of Logic = 4)
+  Source:            Sw1 (PAD)
+  Destination:       Ld6 (PAD)
+
+  Data Path: Sw1 to Ld6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.222   0.933  Sw1_IBUF (Ld5_OBUF)
+     LUT2:I1->O            1   0.205   0.580  Ld6_SW0 (N0)
+     LUT6:I5->O            2   0.205   0.616  Ld6 (Ld3_OBUF)
+     OBUF:I->O                 2.571          Ld6_OBUF (Ld6)
+    ----------------------------------------
+    Total                      6.333ns (4.203ns logic, 2.130ns route)
+                                       (66.4% logic, 33.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock ClkPort
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ClkPort        |   78.068|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VGA_1/DIV_CLK_1
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+VGA_1/DIV_CLK_1|    4.927|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 33.00 secs
+Total CPU time to Xst completion: 33.34 secs
+ 
+--> 
+
+Total memory usage is 332212 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  242 (   0 filtered)
+Number of infos    :   34 (   0 filtered)
+

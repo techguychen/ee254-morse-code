@@ -1,0 +1,191 @@
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc morse_code_top.ucf -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf -ucf morse_code_top.ucf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc nexys3.ucf -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc nexys3.ucf -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf -ucf nexys3.ucf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc nexys3.ucf -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc nexys3.ucf -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf -ucf nexys3.ucf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc nexys3.ucf -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf -ucf nexys3.ucf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc nexys3.ucf -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf -ucf nexys3.ucf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc nexys3.ucf -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml morse_code_top.twx morse_code_top.ncd -o morse_code_top.twr morse_code_top.pcf -ucf nexys3.ucf 
+bitgen -intstyle ise -f morse_code_top.ut morse_code_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.xst" -ofn "C:/Users/Kevin Su/Documents/Files/USC/EE 254L/ee254l_project/morse_code_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc nexys3.ucf -p xc6slx16-csg324-3 "morse_code_top.ngc" morse_code_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o morse_code_top_map.ncd morse_code_top.ngd morse_code_top.pcf 
+par -w -intstyle ise -ol high -mt off morse_code_top_map.ncd morse_code_top.ncd morse_code_top.pcf 
